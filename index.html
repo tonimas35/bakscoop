@@ -1,1529 +1,250 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP | html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license
+	Adapted for Bakscoop - Empresa Metalúrgica en Irún
+-->
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bakscoop — Empresa Metalúrgica en Irún</title>
-    <meta name="description" content="Bak S.Coop - Empresa metalúrgica en Irún, Guipúzcoa. Cerramientos metálicos, policarbonatos, reforma de cubiertas y mantenimientos.">
-    <meta property="og:title" content="Bakscoop — Empresa Metalúrgica en Irún">
-    <meta property="og:description" content="Bak S.Coop - Fabricación y montaje de estructuras, cerramientos metálicos, policarbonatos, cubiertas y mantenimientos en Guipúzcoa.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://tonimas35.github.io/bakscoop/">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23cc0000'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='serif' font-weight='bold' font-size='20' fill='white'%3EB%3C/text%3E%3C/svg%3E">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --rojo: #b91c1c;
-            --rojo-oscuro: #991b1b;
-            --rojo-claro: #dc2626;
-            --gris-900: #18181b;
-            --gris-800: #27272a;
-            --gris-700: #3f3f46;
-            --gris-600: #52525b;
-            --gris-500: #71717a;
-            --gris-400: #a1a1aa;
-            --gris-300: #d4d4d8;
-            --gris-200: #e4e4e7;
-            --gris-100: #f4f4f5;
-            --gris-50: #fafafa;
-            --blanco: #ffffff;
-            --crema: #faf9f7;
-            --sombra-sm: 0 1px 2px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.1);
-            --sombra-md: 0 4px 6px rgba(0,0,0,0.05), 0 10px 15px rgba(0,0,0,0.1);
-            --sombra-lg: 0 10px 25px rgba(0,0,0,0.08), 0 20px 48px rgba(0,0,0,0.12);
-            --font-heading: 'DM Serif Display', Georgia, 'Times New Roman', serif;
-            --font-body: 'Source Sans 3', 'Segoe UI', system-ui, sans-serif;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; scroll-padding-top: 110px; }
-
-        body {
-            font-family: var(--font-body);
-            background: var(--blanco);
-            color: var(--gris-700);
-            line-height: 1.65;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        img { max-width: 100%; height: auto; display: block; }
-        a { text-decoration: none; color: inherit; transition: color 0.2s; }
-
-        /* =====================
-           TOP BAR
-           ===================== */
-        .top-bar {
-            background: var(--gris-800);
-            color: var(--gris-300);
-            font-size: 0.8rem;
-            padding: 0.5rem 0;
-        }
-
-        .top-bar-inner {
-            max-width: 1140px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .top-bar a {
-            color: var(--gris-300);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            transition: color 0.2s;
-        }
-
-        .top-bar a:hover { color: var(--blanco); }
-
-        .top-bar svg {
-            width: 14px;
-            height: 14px;
-            flex-shrink: 0;
-        }
-
-        /* =====================
-           HEADER / NAV
-           ===================== */
-        .header {
-            background: var(--blanco);
-            border-bottom: 3px solid var(--rojo);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: var(--sombra-sm);
-        }
-
-        .header-inner {
-            max-width: 1140px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 75px;
-        }
-
-        .logo-link {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .logo-link img {
-            height: 55px;
-            width: auto;
-        }
-
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-            line-height: 1.2;
-        }
-
-        .logo-text strong {
-            font-family: var(--font-heading);
-            font-size: 1.4rem;
-            font-weight: 400;
-            color: var(--rojo);
-            letter-spacing: 0.01em;
-        }
-
-        .logo-text span {
-            font-size: 0.72rem;
-            color: var(--gris-500);
-            font-weight: 500;
-            font-style: italic;
-            letter-spacing: 0.04em;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 0;
-        }
-
-        .nav-links a {
-            display: block;
-            padding: 0.6rem 1.2rem;
-            font-size: 0.88rem;
-            font-weight: 600;
-            color: var(--gris-600);
-            letter-spacing: 0.02em;
-            transition: all 0.25s ease;
-            border-bottom: 2px solid transparent;
-            text-transform: uppercase;
-            font-size: 0.78rem;
-        }
-
-        .nav-links a:hover {
-            color: var(--rojo);
-            border-bottom-color: var(--rojo);
-        }
-
-        /* Mobile toggle */
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0.5rem;
-        }
-
-        .menu-toggle svg {
-            width: 28px;
-            height: 28px;
-            color: var(--gris-800);
-        }
-
-        /* =====================
-           HERO SLIDER
-           ===================== */
-        .hero {
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-            background: var(--gris-900);
-        }
-
-        .hero-slides {
-            display: flex;
-            transition: transform 0.6s ease-in-out;
-            width: 400%;
-        }
-
-        .hero-slide {
-            width: 25%;
-            flex-shrink: 0;
-        }
-
-        .hero-slide img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(
-                to right,
-                rgba(0,0,0,0.55) 0%,
-                rgba(0,0,0,0.2) 50%,
-                transparent 100%
-            );
-            display: flex;
-            align-items: center;
-            pointer-events: none;
-        }
-
-        .hero-text {
-            max-width: 1140px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-            width: 100%;
-            pointer-events: auto;
-        }
-
-        .hero-text h1 {
-            font-family: var(--font-heading);
-            font-size: clamp(1.8rem, 4vw, 2.8rem);
-            font-weight: 400;
-            color: var(--blanco);
-            line-height: 1.25;
-            margin-bottom: 0.75rem;
-            text-shadow: 0 2px 12px rgba(0,0,0,0.4);
-        }
-
-        .hero-text p {
-            font-size: clamp(0.95rem, 2vw, 1.15rem);
-            color: rgba(255,255,255,0.9);
-            max-width: 420px;
-            margin-bottom: 1.5rem;
-            text-shadow: 0 1px 4px rgba(0,0,0,0.3);
-        }
-
-        .hero-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.8rem 2rem;
-            background: var(--rojo);
-            color: var(--blanco);
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(185,28,28,0.3);
-        }
-
-        .hero-btn:hover { background: var(--rojo-oscuro); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(185,28,28,0.4); }
-
-        .hero-btn svg { width: 16px; height: 16px; }
-
-        /* Slider dots */
-        .hero-dots {
-            position: absolute;
-            bottom: 1.2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 0.5rem;
-            z-index: 10;
-        }
-
-        .hero-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            border: 2px solid var(--blanco);
-            background: transparent;
-            cursor: pointer;
-            transition: all 0.2s;
-            padding: 0;
-        }
-
-        .hero-dot.active {
-            background: var(--rojo);
-            border-color: var(--rojo);
-        }
-
-        /* Slider arrows */
-        .hero-arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 10;
-            background: rgba(0,0,0,0.4);
-            border: none;
-            color: white;
-            width: 44px;
-            height: 44px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        .hero-arrow:hover { background: var(--rojo); }
-        .hero-arrow svg { width: 22px; height: 22px; }
-        .hero-arrow.prev { left: 0.75rem; }
-        .hero-arrow.next { right: 0.75rem; }
-
-        /* =====================
-           RED ACCENT STRIPE
-           ===================== */
-        .red-stripe {
-            height: 5px;
-            background: var(--rojo);
-        }
-
-        /* =====================
-           INTRO / ABOUT
-           ===================== */
-        .intro {
-            background: var(--crema);
-            padding: 4.5rem 1.5rem;
-        }
-
-        .intro-inner {
-            max-width: 850px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .intro h2 {
-            font-family: var(--font-heading);
-            font-size: 1.9rem;
-            font-weight: 400;
-            color: var(--gris-900);
-            margin-bottom: 0.75rem;
-        }
-
-        .intro-line {
-            width: 50px;
-            height: 2px;
-            background: var(--rojo);
-            margin: 0 auto 2rem;
-        }
-
-        .intro p {
-            font-size: 0.95rem;
-            color: var(--gris-600);
-            line-height: 1.8;
-            max-width: 900px;
-            margin: 0 auto 1rem;
-            text-align: justify;
-        }
-        .intro p a { color: var(--rojo); text-decoration: underline; }
-        .intro p a:hover { color: #8b0000; }
-
-        .empresa-content {
-            display: flex; gap: 2rem; align-items: flex-start;
-            max-width: 900px; margin: 0 auto 1.5rem; text-align: left;
-        }
-        .empresa-img { flex-shrink: 0; width: 280px; }
-        .empresa-img img { width: 100%; height: auto; display: block; border: 1px solid var(--gris-200); }
-        .empresa-text { flex: 1; }
-        .empresa-text p { max-width: none; margin: 0 0 1rem; }
-
-        @media (max-width: 700px) {
-            .empresa-content { flex-direction: column; }
-            .empresa-img { width: 100%; max-width: 350px; margin: 0 auto; }
-        }
-
-        /* =====================
-           SERVICES
-           ===================== */
-        .servicios {
-            background: var(--blanco);
-            padding: 4.5rem 1.5rem;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-header h2 {
-            font-family: var(--font-heading);
-            font-size: 1.9rem;
-            font-weight: 400;
-            color: var(--gris-900);
-            margin-bottom: 0.6rem;
-        }
-
-        .section-header .line {
-            width: 50px;
-            height: 2px;
-            background: var(--rojo);
-            margin: 0 auto;
-        }
-
-        .servicios-grid {
-            max-width: 1140px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-        }
-
-        .servicio-card {
-            background: var(--blanco);
-            border: 1px solid var(--gris-200);
-            overflow: hidden;
-            transition: all 0.35s ease;
-            position: relative;
-        }
-
-        .servicio-card::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--rojo);
-            transform: scaleX(0);
-            transition: transform 0.35s ease;
-        }
-
-        .servicio-card:hover {
-            box-shadow: var(--sombra-lg);
-            transform: translateY(-4px);
-        }
-
-        .servicio-card:hover::after {
-            transform: scaleX(1);
-        }
-
-        .servicio-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .servicio-card:hover .servicio-img {
-            transform: scale(1.05);
-        }
-
-        .servicio-body {
-            padding: 1.25rem;
-        }
-
-        .servicio-body h3 {
-            font-family: var(--font-heading);
-            font-size: 1.05rem;
-            font-weight: 400;
-            color: var(--gris-900);
-            margin-bottom: 0.5rem;
-        }
-
-        .servicio-body p {
-            font-size: 0.85rem;
-            color: var(--gris-500);
-            line-height: 1.65;
-        }
-
-        .servicio-body .more {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.3rem;
-            margin-top: 0.75rem;
-            font-size: 0.82rem;
-            font-weight: 600;
-            color: var(--rojo);
-        }
-
-        .servicio-body .more svg { width: 14px; height: 14px; }
-
-        /* =====================
-           TRABAJOS REALIZADOS
-           ===================== */
-        .trabajos { background: var(--crema); padding: 4.5rem 1.5rem; }
-        .trabajos-grid {
-            max-width: 1140px; margin: 0 auto;
-            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem;
-        }
-        .trabajo-card {
-            background: var(--blanco); border: 1px solid var(--gris-200);
-            overflow: hidden; transition: all 0.35s ease; position: relative;
-        }
-        .trabajo-card::after {
-            content: ''; position: absolute; bottom: 0; left: 0; right: 0;
-            height: 3px; background: var(--rojo); transform: scaleX(0); transition: transform 0.35s ease;
-        }
-        .trabajo-card:hover { box-shadow: var(--sombra-lg); transform: translateY(-4px); }
-        .trabajo-card:hover::after { transform: scaleX(1); }
-        .trabajo-img { width: 100%; height: 180px; object-fit: cover; transition: transform 0.5s ease; }
-        .trabajo-card:hover .trabajo-img { transform: scale(1.05); }
-        .trabajo-body { padding: 1rem 1.1rem; }
-        .trabajo-body h3 { font-family: var(--font-heading); font-size: 0.95rem; font-weight: 400; color: var(--gris-900); margin-bottom: 0.35rem; }
-        .trabajo-body p { font-size: 0.82rem; color: var(--gris-500); line-height: 1.55; }
-
-        /* =====================
-           NOTICIAS
-           ===================== */
-        .noticias { background: var(--blanco); padding: 4.5rem 1.5rem; }
-        .noticias-grid {
-            max-width: 1140px; margin: 0 auto;
-            display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;
-            max-width: 800px;
-        }
-        .noticia-card {
-            background: var(--blanco); border: 1px solid var(--gris-200);
-            overflow: hidden; transition: box-shadow 0.2s;
-        }
-        .noticia-card:hover { box-shadow: var(--sombra-md); }
-        .noticia-img { width: 100%; height: 200px; object-fit: cover; }
-        .noticia-body { padding: 1.2rem; }
-        .noticia-card { transition: all 0.35s ease; }
-        .noticia-card:hover { box-shadow: var(--sombra-lg); transform: translateY(-3px); }
-        .noticia-body h3 { font-family: var(--font-heading); font-size: 1rem; font-weight: 400; color: var(--gris-900); margin-bottom: 0.4rem; line-height: 1.4; }
-        .noticia-body .fecha { font-size: 0.78rem; color: var(--gris-500); font-weight: 500; }
-
-        /* =====================
-           MODAL
-           ===================== */
-        .modal-overlay {
-            display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.75);
-            backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
-            z-index: 200; justify-content: center; align-items: center; padding: 2rem;
-        }
-        .modal-overlay.active { display: flex; animation: fadeIn 0.25s ease; }
-        .modal-box {
-            background: var(--blanco); max-width: 720px; width: 100%; max-height: 85vh;
-            overflow-y: auto; position: relative; box-shadow: 0 25px 80px rgba(0,0,0,0.4);
-            animation: slideUp 0.3s ease;
-        }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        .modal-close {
-            position: absolute; top: 0.75rem; right: 0.75rem; background: var(--gris-900);
-            color: white; border: none; width: 32px; height: 32px; font-size: 1.2rem;
-            cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 5;
-        }
-        .modal-close:hover { background: var(--rojo); }
-        .modal-gallery { position: relative; }
-        .modal-gallery img { width: 100%; max-height: 420px; object-fit: contain; display: block; background: var(--gris-100); }
-        .modal-gallery-nav {
-            position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5);
-            color: white; border: none; padding: 0.5rem 0.8rem; font-size: 1.2rem; cursor: pointer;
-        }
-        .modal-gallery-nav:hover { background: var(--rojo); }
-        .modal-gallery-nav.prev { left: 0.5rem; }
-        .modal-gallery-nav.next { right: 0.5rem; }
-        .modal-gallery-dots { text-align: center; padding: 0.5rem 0; background: var(--gris-50); }
-        .modal-gallery-dots span {
-            display: inline-block; width: 8px; height: 8px; border-radius: 50%;
-            background: var(--gris-300); margin: 0 3px; cursor: pointer;
-        }
-        .modal-gallery-dots span.active { background: var(--rojo); }
-        .modal-content { padding: 1.5rem; }
-        .modal-content h2 { font-family: var(--font-heading); font-size: 1.2rem; font-weight: 400; color: var(--gris-900); margin-bottom: 0.75rem; }
-        .modal-content p { font-size: 0.88rem; color: var(--gris-600); line-height: 1.7; }
-        .modal-content .fecha { font-size: 0.8rem; color: var(--gris-500); margin-bottom: 0.5rem; display: block; }
-        .servicio-card, .trabajo-card, .noticia-card { cursor: pointer; }
-
-        @media (max-width: 580px) {
-            .modal-overlay { padding: 0.5rem; }
-            .modal-gallery img { height: 220px; }
-        }
-
-        /* =====================
-           CONTACT
-           ===================== */
-        .contacto {
-            background: var(--crema);
-            padding: 4.5rem 1.5rem;
-        }
-
-        .contacto-grid {
-            max-width: 1140px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1.4fr;
-            gap: 2.5rem;
-            align-items: start;
-        }
-
-        .contacto-info h2 {
-            font-family: var(--font-heading);
-            font-size: 1.9rem;
-            font-weight: 400;
-            color: var(--gris-900);
-            margin-bottom: 0.5rem;
-        }
-
-        .contacto-info .line {
-            width: 60px;
-            height: 3px;
-            background: var(--rojo);
-            margin-bottom: 1.5rem;
-        }
-
-        .contacto-info p {
-            color: var(--gris-600);
-            margin-bottom: 2rem;
-            line-height: 1.7;
-        }
-
-        .contacto-items {
-            display: flex;
-            flex-direction: column;
-            gap: 1.25rem;
-        }
-
-        .contacto-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.85rem;
-        }
-
-        .contacto-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--rojo);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            border-radius: 4px;
-        }
-
-        .contacto-icon svg {
-            width: 18px;
-            height: 18px;
-            color: white;
-        }
-
-        .contacto-data strong {
-            display: block;
-            font-size: 0.78rem;
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-            color: var(--gris-500);
-            font-weight: 600;
-            margin-bottom: 0.15rem;
-        }
-
-        .contacto-data span,
-        .contacto-data a {
-            font-size: 0.95rem;
-            color: var(--gris-800);
-        }
-
-        .contacto-data a:hover { color: var(--rojo); }
-
-        .contacto-map {
-            border: 1px solid var(--gris-200);
-            overflow: hidden;
-            background: var(--gris-100);
-        }
-
-        .contacto-map iframe {
-            width: 100%;
-            height: 380px;
-            border: 0;
-        }
-
-        /* =====================
-           FOOTER
-           ===================== */
-        .footer {
-            background: var(--gris-900);
-            color: var(--gris-400);
-            padding: 3rem 1.5rem 1.5rem;
-        }
-
-        .footer-inner {
-            max-width: 1140px;
-            margin: 0 auto;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer h4 {
-            font-family: var(--font-heading);
-            font-size: 1.05rem;
-            font-weight: 400;
-            color: var(--blanco);
-            margin-bottom: 1rem;
-        }
-
-        .footer p,
-        .footer li {
-            font-size: 0.85rem;
-            color: var(--gris-400);
-            line-height: 1.7;
-        }
-
-        .footer ul {
-            list-style: none;
-        }
-
-        .footer ul li { margin-bottom: 0.4rem; }
-
-        .footer a {
-            color: var(--gris-400);
-            transition: color 0.2s;
-        }
-
-        .footer a:hover { color: var(--blanco); }
-
-        .footer-contact-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 0.5rem;
-            font-size: 0.85rem;
-            color: var(--gris-400);
-        }
-
-        .footer-contact-item svg {
-            width: 14px;
-            height: 14px;
-            color: var(--rojo);
-            flex-shrink: 0;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 1.25rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.78rem;
-            color: var(--gris-500);
-        }
-
-        /* =====================
-           WHATSAPP
-           ===================== */
-        .whatsapp {
-            position: fixed;
-            bottom: 1.5rem;
-            right: 1.5rem;
-            width: 54px;
-            height: 54px;
-            background: #25D366;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 999;
-            box-shadow: 0 3px 12px rgba(37,211,102,0.35);
-            transition: transform 0.2s;
-        }
-
-        .whatsapp:hover { transform: scale(1.1); }
-        .whatsapp svg { width: 28px; height: 28px; fill: white; }
-        .whatsapp::before {
-            content: '';
-            position: absolute;
-            inset: -4px;
-            border-radius: 50%;
-            border: 2px solid #25D366;
-            animation: whatsappPulse 2s ease-in-out infinite;
-        }
-        @keyframes whatsappPulse {
-            0%, 100% { transform: scale(1); opacity: 0.5; }
-            50% { transform: scale(1.15); opacity: 0; }
-        }
-
-        /* =====================
-           SCROLL REVEAL (subtle)
-           ===================== */
-        .fade-up {
-            opacity: 0;
-            transform: translateY(24px);
-            transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-
-        .fade-up.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Staggered delays for grid items */
-        .servicios-grid .fade-up:nth-child(2) { transition-delay: 0.08s; }
-        .servicios-grid .fade-up:nth-child(3) { transition-delay: 0.16s; }
-        .servicios-grid .fade-up:nth-child(4) { transition-delay: 0.24s; }
-        .servicios-grid .fade-up:nth-child(5) { transition-delay: 0.32s; }
-        .servicios-grid .fade-up:nth-child(6) { transition-delay: 0.40s; }
-        .servicios-grid .fade-up:nth-child(7) { transition-delay: 0.48s; }
-        .trabajos-grid .fade-up:nth-child(2) { transition-delay: 0.06s; }
-        .trabajos-grid .fade-up:nth-child(3) { transition-delay: 0.12s; }
-        .trabajos-grid .fade-up:nth-child(4) { transition-delay: 0.18s; }
-        .trabajos-grid .fade-up:nth-child(5) { transition-delay: 0.24s; }
-        .trabajos-grid .fade-up:nth-child(6) { transition-delay: 0.30s; }
-
-        /* =====================
-           RESPONSIVE
-           ===================== */
-        @media (max-width: 960px) {
-            .servicios-grid { grid-template-columns: repeat(2, 1fr); }
-            .trabajos-grid { grid-template-columns: repeat(2, 1fr); }
-            .footer-grid { grid-template-columns: 1fr 1fr; }
-        }
-
-        @media (max-width: 768px) {
-            .top-bar { display: none; }
-
-            .header-inner { height: 65px; }
-            .logo-link img { height: 45px; }
-            .logo-text strong { font-size: 1.1rem; }
-
-            .nav-links {
-                position: fixed;
-                top: 65px;
-                left: 0;
-                right: 0;
-                background: var(--blanco);
-                flex-direction: column;
-                border-bottom: 3px solid var(--rojo);
-                box-shadow: var(--sombra-md);
-                transform: translateY(-120%);
-                transition: transform 0.3s ease;
-                z-index: 99;
-            }
-
-            .nav-links.open { transform: translateY(0); }
-
-            .nav-links a {
-                padding: 1rem 1.5rem;
-                border-bottom: 1px solid var(--gris-100);
-            }
-
-            .menu-toggle { display: block; }
-
-            .hero-slide img { height: 300px; }
-            .hero { max-height: 300px; }
-            .hero-text h1 { font-size: 1.4rem; }
-            .hero-text p { font-size: 0.9rem; margin-bottom: 1rem; }
-            .hero-btn { padding: 0.6rem 1.4rem; font-size: 0.82rem; }
-            .hero-arrow { width: 36px; height: 36px; }
-            .hero-arrow svg { width: 18px; height: 18px; }
-
-            .contacto-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contacto-map iframe { height: 280px; }
-        }
-
-        @media (max-width: 580px) {
-            .servicios-grid { grid-template-columns: 1fr; max-width: 400px; }
-            .trabajos-grid { grid-template-columns: 1fr; max-width: 400px; }
-            .noticias-grid { grid-template-columns: 1fr; }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                gap: 0.5rem;
-                text-align: center;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <!-- TOP BAR -->
-    <div class="top-bar">
-        <div class="top-bar-inner">
-            <a href="tel:843985620">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
-                843 985 620
-            </a>
-            <a href="mailto:bakscoop@gmail.com">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
-                bakscoop@gmail.com
-            </a>
-        </div>
-    </div>
-
-    <!-- HEADER -->
-    <header class="header" id="header">
-        <div class="header-inner">
-            <a href="#" class="logo-link">
-                <img src="https://bakscoop.com/images/WebImages/2247_118273740.png" alt="Bakscoop - Empresa Metalúrgica">
-            </a>
-            <nav>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="#empresa" onclick="closeNav()">Empresa</a></li>
-                    <li><a href="#servicios" onclick="closeNav()">Servicios</a></li>
-                    <li><a href="#trabajos" onclick="closeNav()">Trabajos</a></li>
-                    <li><a href="#noticias" onclick="closeNav()">Noticias</a></li>
-                    <li><a href="#contacto" onclick="closeNav()">Contacto</a></li>
-                </ul>
-            </nav>
-            <button class="menu-toggle" id="menuToggle" aria-label="Menú">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
-            </button>
-        </div>
-    </header>
-
-    <!-- HERO SLIDER -->
-    <section class="hero">
-        <div class="hero-slides" id="heroSlides">
-            <div class="hero-slide"><img src="https://bakscoop.com/images/slidePortada/1.jpg" alt="Trabajos de Bakscoop"></div>
-            <div class="hero-slide"><img src="https://bakscoop.com/images/slidePortada/2.jpg" alt="Cerramientos metálicos"></div>
-            <div class="hero-slide"><img src="https://bakscoop.com/images/slidePortada/3.jpg" alt="Cubiertas y policarbonatos"></div>
-            <div class="hero-slide"><img src="https://bakscoop.com/images/slidePortada/4.jpg" alt="Mantenimiento industrial"></div>
-        </div>
-        <div class="hero-overlay">
-            <div class="hero-text">
-                <h1>Empresa dedicada al<br>sector del metal en Irún</h1>
-                <p>Cerramientos metálicos, policarbonatos, reforma de cubiertas y mantenimientos con la confianza de una cooperativa familiar.</p>
-                <a href="#contacto" class="hero-btn">
-                    Contactar
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
-                </a>
-            </div>
-        </div>
-        <button class="hero-arrow prev" id="heroPrev" aria-label="Anterior">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"/></svg>
-        </button>
-        <button class="hero-arrow next" id="heroNext" aria-label="Siguiente">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
-        </button>
-        <div class="hero-dots" id="heroDots">
-            <button class="hero-dot active" data-index="0"></button>
-            <button class="hero-dot" data-index="1"></button>
-            <button class="hero-dot" data-index="2"></button>
-            <button class="hero-dot" data-index="3"></button>
-        </div>
-    </section>
-
-    <div class="red-stripe"></div>
-
-    <!-- INTRO / EMPRESA -->
-    <section class="intro" id="empresa">
-        <div class="intro-inner fade-up">
-            <h2>Empresa Bakscoop</h2>
-            <div class="intro-line"></div>
-            <div class="empresa-content">
-                <div class="empresa-img">
-                    <img loading="lazy" src="https://bakscoop.com/Images/eShop/thumbs/2247_195073368-1..jpg" alt="Trabajo de cubiertas Bakscoop">
-                </div>
-                <div class="empresa-text">
-                    <p><strong>Bak, S.Coop</strong> es una empresa especializada en la <strong>fabricación y montaje de estructuras</strong>, cerramientos metálicos, policarbonatos, cubiertas tipo deck (Tela asfáltica, policloruro de vinilo, TPO), fachadas composite, reformas de cubiertas, mantenimientos... cumpliendo con los requisitos marcados en el <a href="https://www.codigotecnico.org/" target="_blank" rel="noopener">Código Técnico de la Edificación</a>.</p>
-                    <p>Formada por un grupo de profesionales con una amplia experiencia en los diferentes sistemas de construcción, con sus departamentos de Ingeniería técnica, departamento comercial, taller de producción y equipos de montaje totalmente entrelazados, lo cual nos permite poder realizar diferentes estudios y proyectos, adaptándonos a las necesidades más idóneas en cada caso.</p>
-                </div>
-            </div>
-            <p>Nuestro aval es la amplia destreza acumulada en los sucesivos años de presencia en el mercado. Si tuviésemos que destacar una virtud sería la del servicio al cliente. Una de nuestras mayores preocupaciones es la calidad final del trabajo y el estar abiertos a los nuevos materiales y tecnologías que aparecen en el mercado.</p>
-            <p>La estrategia marcada por <strong>Bak, S.Coop</strong> en la realización de los trabajos contratados es el cumplimiento con todas las obligaciones legales y reglamentarias en materia de calidad y seguridad con el fin de satisfacer las expectativas de los clientes.</p>
-        </div>
-    </section>
-
-    <!-- SERVICIOS -->
-    <section class="servicios" id="servicios">
-        <div class="section-header fade-up">
-            <h2>Servicios que ofrecemos</h2>
-            <div class="line"></div>
-        </div>
-        <div class="servicios-grid">
-            <div class="servicio-card fade-up" data-modal="serv-estructuras">
-                <img class="servicio-img" loading="lazy" src="https://bakscoop.com/images/iniThumb1.jpg" alt="Fabricación y montaje de estructuras">
-                <div class="servicio-body">
-                    <h3>Fabricación y montaje de estructuras</h3>
-                    <p>Diseño, fabricación y montaje de estructuras metálicas para naves industriales y edificaciones.</p>
-                </div>
-            </div>
-            <div class="servicio-card fade-up" data-modal="serv-cerramientos">
-                <img class="servicio-img" loading="lazy" src="https://bakscoop.com/images/iniThumb2.jpg" alt="Cerramientos metálicos">
-                <div class="servicio-body">
-                    <h3>Cerramientos metálicos</h3>
-                    <p>Instalación de cerramientos en acero, aluminio y hierro para naves industriales, comercios y viviendas.</p>
-                </div>
-            </div>
-            <div class="servicio-card fade-up" data-modal="serv-policarbonatos">
-                <img class="servicio-img" loading="lazy" src="https://bakscoop.com/images/iniThumb3.jpg" alt="Policarbonatos">
-                <div class="servicio-body">
-                    <h3>Policarbonatos</h3>
-                    <p>Cubiertas y cerramientos de policarbonato celular para terrazas, porches, invernaderos y espacios industriales.</p>
-                </div>
-            </div>
-            <div class="servicio-card fade-up" data-modal="serv-deck">
-                <img class="servicio-img" loading="lazy" src="https://bakscoop.com/images/iniThumb4.jpg" alt="Cubiertas tipo deck">
-                <div class="servicio-body">
-                    <h3>Cubiertas tipo deck</h3>
-                    <p>Tela asfáltica, policloruro de vinilo (PVC) y TPO. Soluciones de impermeabilización profesional.</p>
-                </div>
-            </div>
-            <div class="servicio-card fade-up" data-modal="serv-fachadas">
-                <img class="servicio-img" loading="lazy" src="https://bakscoop.com/Images/eShop/thumbs/2247_195073244-1..jpg" alt="Fachadas composite">
-                <div class="servicio-body">
-                    <h3>Fachadas composite</h3>
-                    <p>Instalación de fachadas composite para edificios industriales y comerciales.</p>
-                </div>
-            </div>
-            <div class="servicio-card fade-up" data-modal="serv-reformas">
-                <img class="servicio-img" loading="lazy" src="https://bakscoop.com/Images/eShop/thumbs/2247_195069892-1..jpg" alt="Reformas de cubiertas">
-                <div class="servicio-body">
-                    <h3>Reformas de cubiertas</h3>
-                    <p>Renovación integral de cubiertas y tejados. Impermeabilización y mejora del aislamiento.</p>
-                </div>
-            </div>
-            <div class="servicio-card fade-up" data-modal="serv-mantenimientos">
-                <img class="servicio-img" loading="lazy" src="https://bakscoop.com/Images/eShop/thumbs/2247_195073368-1..jpg" alt="Mantenimientos">
-                <div class="servicio-body">
-                    <h3>Mantenimientos</h3>
-                    <p>Servicio de mantenimiento preventivo y correctivo de cubiertas, canalones e instalaciones metálicas.</p>
-                </div>
-            </div>
-        </div>
-        <p class="fade-up" style="text-align:center; max-width:700px; margin:1.5rem auto 0; font-size:0.85rem; color:#666;">Todo ello cumpliendo con los requisitos marcados en el <strong>Código Técnico de la Edificación</strong>.</p>
-    </section>
-
-    <!-- TRABAJOS REALIZADOS -->
-    <section class="trabajos" id="trabajos">
-        <div class="section-header fade-up">
-            <h2>Trabajos Realizados</h2>
-            <div class="line"></div>
-        </div>
-        <div class="trabajos-grid">
-            <div class="trabajo-card fade-up" data-modal="mantenimientos">
-                <img class="trabajo-img" loading="lazy" src="https://bakscoop.com/Images/eShop/thumbs/2247_195073368-1..jpg" alt="Mantenimientos diversos">
-                <div class="trabajo-body">
-                    <h3>Mantenimientos Diversos</h3>
-                    <p>Realización de diversos mantenimientos de canalones y de cubierta.</p>
-                </div>
-            </div>
-            <div class="trabajo-card fade-up" data-modal="caf">
-                <img class="trabajo-img" loading="lazy" src="https://bakscoop.com/Images/eShop/thumbs/2247_195069892-1..jpg" alt="Reforma en CAF Beasain">
-                <div class="trabajo-body">
-                    <h3>Reforma en CAF Beasain</h3>
-                    <p>Reforma de cubiertas y fachadas del edificio de comedor.</p>
-                </div>
-            </div>
-            <div class="trabajo-card fade-up" data-modal="danobat">
-                <img class="trabajo-img" loading="lazy" src="https://bakscoop.com/Images/eShop/thumbs/2247_195069509-1..jpg" alt="Danobat Elgoibar">
-                <div class="trabajo-body">
-                    <h3>Danobat (Elgoibar)</h3>
-                    <p>Colocación de luminarias en la cubierta de Danobat en Elgoibar.</p>
-                </div>
-            </div>
-            <div class="trabajo-card fade-up" data-modal="ampo">
-                <img class="trabajo-img" loading="lazy" src="https://bakscoop.com/Images/eShop/thumbs/2247_118436135-1..jpg" alt="Ampo Idiazabal">
-                <div class="trabajo-body">
-                    <h3>Ampo Idiazabal</h3>
-                    <p>Renovación de los traslúcidos de los dientes sierra y limpieza y pintado de los canalones.</p>
-                </div>
-            </div>
-            <div class="trabajo-card fade-up" data-modal="fagor">
-                <img class="trabajo-img" loading="lazy" src="https://bakscoop.com/Images/eShop/thumbs/2247_192888931-1..jpg" alt="Fagor Aretxabaleta">
-                <div class="trabajo-body">
-                    <h3>Fagor Aretxabaleta</h3>
-                    <p>Cierre de cubierta de marquesina con lámina de Pvc y cierre en chapa simple de torre de ascensor.</p>
-                </div>
-            </div>
-            <div class="trabajo-card fade-up" data-modal="gkn">
-                <img class="trabajo-img" loading="lazy" src="https://bakscoop.com/Images/eShop/thumbs/2247_118438111-1..jpg" alt="GKN Zumaia">
-                <div class="trabajo-body">
-                    <h3>GKN Zumaia</h3>
-                    <p>Cambio de plásticos por cristales en dientes sierra. Reforma de cubierta posterior.</p>
-                </div>
-            </div>
-            <div class="trabajo-card fade-up" data-modal="padel">
-                <img class="trabajo-img" loading="lazy" src="https://bakscoop.com/Images/eShop/thumbs/2247_118437846-1..jpg" alt="Padel Irún">
-                <div class="trabajo-body">
-                    <h3>Padel Irún</h3>
-                    <p>Transformación de claraboyas de fijas a móviles.</p>
-                </div>
-            </div>
-            <div class="trabajo-card fade-up" data-modal="irizar">
-                <img class="trabajo-img" loading="lazy" src="https://bakscoop.com/Images/eShop/thumbs/2247_195073244-1..jpg" alt="Irizar Ormaiztegi">
-                <div class="trabajo-body">
-                    <h3>Irizar Ormaiztegi</h3>
-                    <p>Sobrecubierta aislada y con lámina de Pvc en cubierta de chimeneas.</p>
-                </div>
-            </div>
-            <div class="trabajo-card fade-up" data-modal="copreci">
-                <img class="trabajo-img" loading="lazy" src="https://bakscoop.com/Images/eShop/thumbs/2247_195073562-1..jpg" alt="Copreci Aretxabaleta">
-                <div class="trabajo-body">
-                    <h3>Copreci Aretxabaleta</h3>
-                    <p>Renovación de diferentes zonas.</p>
-                </div>
-            </div>
-            <div class="trabajo-card fade-up" data-modal="selak">
-                <img class="trabajo-img" loading="lazy" src="https://bakscoop.com/Images/eShop/thumbs/2247_195074592-1..jpg" alt="Selak Hernani">
-                <div class="trabajo-body">
-                    <h3>Selak Hernani</h3>
-                    <p>Cambio del castillete de cubierta en hormigón armado por otro en estructura metálica.</p>
-                </div>
-            </div>
-            <div class="trabajo-card fade-up" data-modal="rodisa">
-                <img class="trabajo-img" loading="lazy" src="https://bakscoop.com/Images/eShop/thumbs/2247_118437989-1..jpg" alt="Rodisa Elgoibar">
-                <div class="trabajo-body">
-                    <h3>Rodisa Elgoibar</h3>
-                    <p>Colocación de falso techo.</p>
-                </div>
-            </div>
-            <div class="trabajo-card fade-up" data-modal="villa">
-                <img class="trabajo-img" loading="lazy" src="https://bakscoop.com/Images/eShop/thumbs/2247_118438313-1..jpg" alt="Villa en Irun">
-                <div class="trabajo-body">
-                    <h3>Villa en Irún</h3>
-                    <p>Cierre en policarbonato celular de cubierta para piscina cubierta.</p>
-                </div>
-            </div>
-            <div class="trabajo-card fade-up" data-modal="okin">
-                <img class="trabajo-img" loading="lazy" src="https://bakscoop.com/Images/eShop/thumbs/2247_118438558-1..jpg" alt="Okin">
-                <div class="trabajo-body">
-                    <h3>Okin</h3>
-                    <p>Realización de chimeneas de cubierta.</p>
-                </div>
-            </div>
-            <div class="trabajo-card fade-up" data-modal="bieraikin">
-                <img class="trabajo-img" loading="lazy" src="https://bakscoop.com/Images/eShop/thumbs/2247_118437622-1..jpg" alt="Bi Eraikin">
-                <div class="trabajo-body">
-                    <h3>Bi Eraikin</h3>
-                    <p>Trabajos de cubierta en villa.</p>
-                </div>
-            </div>
-            <div class="trabajo-card fade-up" data-modal="artzamendi">
-                <img class="trabajo-img" loading="lazy" src="https://bakscoop.com/Images/eShop/thumbs/2247_118437431-1..jpg" alt="Artzamendi Izaspi">
-                <div class="trabajo-body">
-                    <h3>Artzamendi Izaspi</h3>
-                    <p>Trabajos de cubierta.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- NOTICIAS -->
-    <section class="noticias" id="noticias">
-        <div class="section-header fade-up">
-            <h2>Noticias</h2>
-            <div class="line"></div>
-        </div>
-        <div class="noticias-grid">
-            <div class="noticia-card fade-up" data-modal="noticia-cubiertas">
-                <img class="noticia-img" loading="lazy" src="https://bakscoop.com/Images/news/photos/2247_338992573-1.jpeg" alt="Campaña Trabajos en cubiertas">
-                <div class="noticia-body">
-                    <h3>Bak, S.Coop colaborando en la difusión de la campaña: "Trabajos en cubiertas"</h3>
-                    <span class="fecha">28 de septiembre de 2021</span>
-                </div>
-            </div>
-            <div class="noticia-card fade-up" data-modal="noticia-web">
-                <img class="noticia-img" loading="lazy" src="https://bakscoop.com/Images/news/photos/2247_118436059-1..jpg" alt="Nueva página web">
-                <div class="noticia-body">
-                    <h3>Nueva página web</h3>
-                    <span class="fecha">2 de junio de 2014</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACTO -->
-    <section class="contacto" id="contacto">
-        <div class="contacto-grid">
-            <div class="contacto-info fade-up">
-                <h2>Contacto</h2>
-                <div class="line"></div>
-                <p>Si tiene cualquier duda póngase en contacto con nosotros, estaremos encantados de atenderles.</p>
-                <div class="contacto-items">
-                    <div class="contacto-item">
-                        <div class="contacto-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
-                        </div>
-                        <div class="contacto-data">
-                            <strong>Dirección</strong>
-                            <span>Calle Ibaieta Ibilbidea 9<br>20304 Irún, Guipúzcoa</span>
-                        </div>
-                    </div>
-                    <div class="contacto-item">
-                        <div class="contacto-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
-                        </div>
-                        <div class="contacto-data">
-                            <strong>Teléfono</strong>
-                            <a href="tel:843985620">843 985 620</a>
-                        </div>
-                    </div>
-                    <div class="contacto-item">
-                        <div class="contacto-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
-                        </div>
-                        <div class="contacto-data">
-                            <strong>Email</strong>
-                            <a href="mailto:bakscoop@gmail.com">bakscoop@gmail.com</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="contacto-map fade-up">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2898.5!2d-1.7889!3d43.3387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd51a5c2a918f5c5%3A0x9e2b2a6e8c1b6c0!2sIbaieta+Ibilbidea%2C+9%2C+20304+Irun%2C+Gipuzkoa!5e0!3m2!1ses!2ses!4v1700000000000!5m2!1ses!2ses"
-                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
-        </div>
-    </section>
-
-    <!-- MODAL -->
-    <div class="modal-overlay" id="modalOverlay">
-        <div class="modal-box">
-            <button class="modal-close" id="modalClose">&times;</button>
-            <div class="modal-gallery">
-                <img id="modalImg" src="" alt="">
-                <button class="modal-gallery-nav prev" id="modalPrev">&#8249;</button>
-                <button class="modal-gallery-nav next" id="modalNext">&#8250;</button>
-                <div class="modal-gallery-dots" id="modalDots"></div>
-            </div>
-            <div class="modal-content">
-                <span class="fecha" id="modalFecha"></span>
-                <h2 id="modalTitle"></h2>
-                <p id="modalDesc"></p>
-            </div>
-        </div>
-    </div>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="footer-inner">
-            <div class="footer-grid">
-                <div>
-                    <h4>Empresa</h4>
-                    <p>Somos una sociedad cooperativa pequeña que se dedica al metal en la provincia de Guipúzcoa. Calidad y confianza desde Irún.</p>
-                </div>
-                <div>
-                    <h4>Servicios</h4>
-                    <ul>
-                        <li><a href="#servicios">Cerramientos metálicos</a></li>
-                        <li><a href="#servicios">Policarbonatos</a></li>
-                        <li><a href="#servicios">Reforma de cubiertas</a></li>
-                        <li><a href="#servicios">Mantenimientos</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Enlaces</h4>
-                    <ul>
-                        <li><a href="#empresa">Empresa</a></li>
-                        <li><a href="#servicios">Servicios</a></li>
-                        <li><a href="#trabajos">Trabajos Realizados</a></li>
-                        <li><a href="#noticias">Noticias</a></li>
-                        <li><a href="#contacto">Contacto</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Contacta con nosotros</h4>
-                    <div class="footer-contact-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
-                        <a href="tel:843985620">843 985 620</a>
-                    </div>
-                    <div class="footer-contact-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
-                        <a href="mailto:bakscoop@gmail.com">bakscoop@gmail.com</a>
-                    </div>
-                    <div class="footer-contact-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
-                        Ibaieta Ibilbidea 9, Irún
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <span>Bak, S.Coop &copy; 2026 — Todos los derechos reservados</span>
-                <span>Empresa metalúrgica en Irún, Guipúzcoa</span>
-            </div>
-        </div>
-    </footer>
-
-    <!-- WHATSAPP -->
-    <a href="https://wa.me/34843985620?text=Hola%2C%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20sobre%20vuestros%20servicios." class="whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    </a>
-
-    <script>
-        // ---- HERO SLIDER ----
-        const slides = document.getElementById('heroSlides');
-        const dots = document.querySelectorAll('.hero-dot');
-        let current = 0;
-        const total = 4;
-        let autoSlide;
-
-        function goTo(index) {
-            current = index;
-            slides.style.transform = `translateX(-${current * 25}%)`;
-            dots.forEach((d, i) => d.classList.toggle('active', i === current));
-        }
-
-        function next() { goTo((current + 1) % total); }
-        function prev() { goTo((current - 1 + total) % total); }
-
-        document.getElementById('heroNext').addEventListener('click', () => { next(); resetAuto(); });
-        document.getElementById('heroPrev').addEventListener('click', () => { prev(); resetAuto(); });
-        dots.forEach(d => d.addEventListener('click', () => { goTo(+d.dataset.index); resetAuto(); }));
-
-        function resetAuto() {
-            clearInterval(autoSlide);
-            autoSlide = setInterval(next, 5000);
-        }
-        autoSlide = setInterval(next, 5000);
-
-        // ---- MOBILE NAV ----
-        const menuToggle = document.getElementById('menuToggle');
-        const navLinks = document.getElementById('navLinks');
-
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('open');
-        });
-
-        function closeNav() {
-            navLinks.classList.remove('open');
-        }
-
-        // ---- SCROLL REVEAL ----
-        const fades = document.querySelectorAll('.fade-up');
-        const obs = new IntersectionObserver((entries) => {
-            entries.forEach(e => {
-                if (e.isIntersecting) { e.target.classList.add('show'); }
-            });
-        }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
-        fades.forEach(el => obs.observe(el));
-
-        // Reveal elements in target section when clicking nav links
-        document.querySelectorAll('a[href^="#"]').forEach(link => {
-            link.addEventListener('click', () => {
-                const id = link.getAttribute('href').substring(1);
-                const section = document.getElementById(id);
-                if (section) {
-                    setTimeout(() => {
-                        section.querySelectorAll('.fade-up').forEach(el => el.classList.add('show'));
-                    }, 100);
-                }
-            });
-        });
-        // ---- MODAL DETAIL ----
-        const B = 'https://bakscoop.com/Images/eshop/products/';
-        const N = 'https://bakscoop.com/Images/news/photos/';
-        const modalData = {
-            mantenimientos: {
-                title: 'Mantenimientos Diversos',
-                desc: 'Realización de diversos mantenimientos de canalones y de cubierta. El servicio incluye inspecciones para detectar posibles filtraciones de agua, revisión de tornillería de anclaje y evaluación de zonas sensibles. Los trabajos de canalones incluyen limpieza y pintado. Se proporciona documentación posterior al mantenimiento detallando el estado inicial, los trabajos realizados y posibles mejoras o necesidades futuras.',
-                imgs: [B+'2247_195073368-1..jpg', B+'2247_195073369-2..jpg', B+'2247_195073369-3..jpg']
-            },
-            caf: {
-                title: 'Reforma en CAF Beasain',
-                desc: 'Reforma de cubiertas y fachadas del edificio de comedor. Colocación de una sobrecubierta aislada sobre la actual. Realización de canalones nuevos galvanizados y soldados. Colocación de fachadas nuevas en policarbonato celular tanto en las fachadas superiores como en las inferiores.',
-                imgs: [B+'2247_195069892-1..jpg', B+'2247_195069892-2..jpg', B+'2247_195069892-3..jpg']
-            },
-            danobat: {
-                title: 'Danobat (Elgoibar) - Colocación de luminarias',
-                desc: 'Instalación de piezas inoxidables para el amarre de las luminarias en la coronación del peto de la cubierta de la nave nueva.',
-                imgs: [B+'2247_195069509-1..jpg', B+'2247_195070763-2..jpg']
-            },
-            ampo: {
-                title: 'Ampo Idiazabal',
-                desc: 'Renovación de los traslúcidos de los dientes sierra y limpieza y pintado de los canalones.',
-                imgs: [B+'2247_118436135-1..jpg', B+'2247_118436135-2..jpg', B+'2247_118436136-3..jpg']
-            },
-            fagor: {
-                title: 'Fagor Aretxabaleta',
-                desc: 'Cierre de cubierta de marquesina con lámina de Pvc y cierre en chapa simple de torre de ascensor.',
-                imgs: [B+'2247_192888931-1..jpg']
-            },
-            gkn: {
-                title: 'GKN Zumaia',
-                desc: 'Cambio de traslúcidos de dientes sierra por cristales. Colocación de ventanales con lamas de apertura automática. Reforma de cubierta posterior en tela asfáltica, colocación de grava nueva y cambio de cúpulas de claraboyas.',
-                imgs: [B+'2247_118438111-1..jpg', B+'2247_118438111-2..jpg', B+'2247_195073927-3..jpg', B+'2247_195073930-4..jpg']
-            },
-            padel: {
-                title: 'Padel Irún',
-                desc: 'Transformación de claraboyas de fijas a móviles.',
-                imgs: [B+'2247_118437846-1..jpg', B+'2247_118437846-2..jpg', B+'2247_118437846-3..jpg']
-            },
-            irizar: {
-                title: 'Irizar Ormaiztegi',
-                desc: 'Realización de una sobrecubierta aislada y con finalización en lámina de Pvc en zona de cabinas de pintura. Rematado de todas las chimeneas y conductos de la cubierta con remates colaminados y lámina de Pvc.',
-                imgs: [B+'2247_195073244-1..jpg', B+'2247_195073245-2..jpg']
-            },
-            copreci: {
-                title: 'Copreci Aretxabaleta',
-                desc: 'Renovación de cubierta con chapa grecada y canalones galvanizados salvando los pilares y chimeneas existentes. Realización de bancada nueva.',
-                imgs: [B+'2247_195073562-1..jpg', B+'2247_195073563-2..jpg']
-            },
-            selak: {
-                title: 'Selak Hernani',
-                desc: 'Desmontaje del castillete en hormigón armado y colocación de uno nuevo en estructura metálica pintada con cierre de la cubierta con chapas grecadas y traslúcidos en poliéster. Posteriormente se cambian los traslúcidos curvos de la cubierta por unos nuevos.',
-                imgs: [B+'2247_195074592-1..jpg', B+'2247_195074593-2..jpg', B+'2247_195074593-3..jpg', B+'2247_195074594-4..jpg']
-            },
-            rodisa: {
-                title: 'Rodisa Elgoibar',
-                desc: 'Colocación de falso techo.',
-                imgs: [B+'2247_118437989-1..jpg', B+'2247_118437989-2..jpg', B+'2247_118437989-3..jpg']
-            },
-            villa: {
-                title: 'Villa en Irún',
-                desc: 'Cierre en policarbonato celular de cubierta para piscina cubierta.',
-                imgs: [B+'2247_118438313-1..jpg', B+'2247_118438313-2..jpg', B+'2247_118438313-3..jpg', B+'2247_118438314-4..jpg']
-            },
-            okin: {
-                title: 'Okin',
-                desc: 'Realización de chimeneas de cubierta.',
-                imgs: [B+'2247_118438558-1..jpg', B+'2247_118438558-3..jpg', B+'2247_118438559-4..jpg']
-            },
-            bieraikin: {
-                title: 'Bi Eraikin',
-                desc: 'Trabajos de cubierta en villa.',
-                imgs: [B+'2247_118437622-1..jpg', B+'2247_118437622-2..jpg', B+'2247_118437622-3..jpg']
-            },
-            artzamendi: {
-                title: 'Artzamendi Izaspi',
-                desc: 'Trabajos de cubierta.',
-                imgs: [B+'2247_118437431-1..jpg', B+'2247_118437431-2..jpg', B+'2247_118437431-3..jpg']
-            },
-            'noticia-cubiertas': {
-                title: 'Bak, S.Coop colaborando en la difusión de la campaña: "Trabajos en cubiertas"',
-                desc: 'Bak, S.Coop participa en la difusión de la campaña de sensibilización sobre seguridad en trabajos en cubiertas, promoviendo las buenas prácticas y la prevención de riesgos laborales en este tipo de intervenciones.',
-                fecha: '28 de septiembre de 2021',
-                imgs: [N+'2247_338992573-1.jpeg']
-            },
-            'noticia-web': {
-                title: 'Nueva página web',
-                desc: 'Cualquier duda que tenga puede ponerse en contacto con nosotros, estaremos encantados de atenderles.',
-                fecha: '2 de junio de 2014',
-                imgs: [N+'2247_118436059-1..jpg']
-            },
-            // SERVICIOS
-            'serv-estructuras': {
-                title: 'Fabricación y montaje de estructuras',
-                desc: 'Diseño, fabricación y montaje de estructuras metálicas para naves industriales y edificaciones. Trabajamos con acero, hierro y aluminio, adaptándonos a las necesidades de cada proyecto.',
-                imgs: ['https://bakscoop.com/images/iniThumb1.jpg']
-            },
-            'serv-cerramientos': {
-                title: 'Cerramientos metálicos',
-                desc: 'Instalación de cerramientos en acero, aluminio y hierro para naves industriales, comercios y viviendas. Soluciones a medida para cada tipo de edificación.',
-                imgs: ['https://bakscoop.com/images/iniThumb2.jpg']
-            },
-            'serv-policarbonatos': {
-                title: 'Policarbonatos',
-                desc: 'Cubiertas y cerramientos de policarbonato celular para terrazas, porches, invernaderos y espacios industriales. Permite la entrada de luz natural manteniendo la protección.',
-                imgs: ['https://bakscoop.com/images/iniThumb3.jpg']
-            },
-            'serv-deck': {
-                title: 'Cubiertas tipo deck',
-                desc: 'Tela asfáltica, policloruro de vinilo (PVC) y TPO. Soluciones profesionales de impermeabilización para cubiertas industriales y comerciales.',
-                imgs: ['https://bakscoop.com/images/iniThumb4.jpg']
-            },
-            'serv-fachadas': {
-                title: 'Fachadas composite',
-                desc: 'Instalación de fachadas composite para edificios industriales y comerciales. Material ligero, resistente y de gran acabado estético.',
-                imgs: [B+'2247_195073244-1..jpg']
-            },
-            'serv-reformas': {
-                title: 'Reformas de cubiertas',
-                desc: 'Renovación integral de cubiertas y tejados. Impermeabilización, sustitución de materiales y mejora del aislamiento térmico y acústico.',
-                imgs: [B+'2247_195069892-1..jpg']
-            },
-            'serv-mantenimientos': {
-                title: 'Mantenimientos',
-                desc: 'Servicio de mantenimiento preventivo y correctivo de cubiertas, canalones e instalaciones metálicas. Inspecciones periódicas, limpieza, pintado y reparaciones.',
-                imgs: [B+'2247_195073368-1..jpg']
-            }
-        };
-
-        const overlay = document.getElementById('modalOverlay');
-        const modalImg = document.getElementById('modalImg');
-        const modalTitle = document.getElementById('modalTitle');
-        const modalDesc = document.getElementById('modalDesc');
-        const modalFecha = document.getElementById('modalFecha');
-        const modalDots = document.getElementById('modalDots');
-        let mImgs = [], mIdx = 0;
-
-        function openModal(key) {
-            const d = modalData[key]; if (!d) return;
-            mImgs = d.imgs; mIdx = 0;
-            modalTitle.textContent = d.title;
-            modalDesc.textContent = d.desc;
-            modalFecha.textContent = d.fecha || '';
-            modalFecha.style.display = d.fecha ? 'block' : 'none';
-            renderModalGallery();
-            overlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-        function closeModal() {
-            overlay.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-        function renderModalGallery() {
-            modalImg.src = mImgs[mIdx];
-            modalDots.innerHTML = mImgs.map((_, i) =>
-                '<span' + (i === mIdx ? ' class="active"' : '') + ' data-i="' + i + '"></span>'
-            ).join('');
-            document.getElementById('modalPrev').style.display = mImgs.length > 1 ? '' : 'none';
-            document.getElementById('modalNext').style.display = mImgs.length > 1 ? '' : 'none';
-            modalDots.style.display = mImgs.length > 1 ? '' : 'none';
-        }
-
-        document.querySelectorAll('[data-modal]').forEach(card => {
-            card.addEventListener('click', () => openModal(card.dataset.modal));
-        });
-        document.getElementById('modalClose').addEventListener('click', closeModal);
-        overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
-        document.getElementById('modalPrev').addEventListener('click', e => { e.stopPropagation(); mIdx = (mIdx - 1 + mImgs.length) % mImgs.length; renderModalGallery(); });
-        document.getElementById('modalNext').addEventListener('click', e => { e.stopPropagation(); mIdx = (mIdx + 1) % mImgs.length; renderModalGallery(); });
-        modalDots.addEventListener('click', e => { if (e.target.dataset.i !== undefined) { mIdx = +e.target.dataset.i; renderModalGallery(); } });
-        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-    </script>
-</body>
+	<head>
+		<title>Bakscoop — Empresa Metalúrgica en Irún</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="Bak S.Coop - Empresa metalúrgica en Irún, Guipúzcoa. Fabricación y montaje de estructuras, cerramientos metálicos, policarbonatos, cubiertas y mantenimientos.">
+		<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23b91c1c'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='serif' font-weight='bold' font-size='20' fill='white'%3EB%3C/text%3E%3C/svg%3E">
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<h1><a href="index.html">
+							<img src="https://bakscoop.com/images/WebImages/2247_118273740.png" alt="Bakscoop" style="height:40px;vertical-align:middle;margin-right:8px;">
+							Bakscoop
+						</a></h1>
+						<nav>
+							<a href="#menu">Menú</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<div class="inner">
+							<h2>Menú</h2>
+							<ul class="links">
+								<li><a href="#banner">Inicio</a></li>
+								<li><a href="#one">Empresa</a></li>
+								<li><a href="#two">Servicios</a></li>
+								<li><a href="#three">Experiencia</a></li>
+								<li><a href="#four">Trabajos Realizados</a></li>
+								<li><a href="#footer">Contacto</a></li>
+							</ul>
+							<a href="#" class="close">Cerrar</a>
+						</div>
+					</nav>
+
+				<!-- Banner -->
+					<section id="banner">
+						<div class="inner">
+							<div class="logo">
+								<img src="https://bakscoop.com/images/WebImages/2247_118273740.png" alt="Bakscoop Logo" style="height:80px;">
+							</div>
+							<h2>Bakscoop</h2>
+							<p>Empresa dedicada al sector del metal en Irún.<br>
+							Cerramientos metálicos, policarbonatos, reforma de cubiertas<br>
+							y mantenimientos con la confianza de una cooperativa familiar.</p>
+						</div>
+					</section>
+
+				<!-- Wrapper -->
+					<section id="wrapper">
+
+						<!-- One: Empresa -->
+							<section id="one" class="wrapper spotlight style1">
+								<div class="inner">
+									<a href="#" class="image"><img src="https://bakscoop.com/Images/eShop/thumbs/2247_195073368-1..jpg" alt="Trabajos Bakscoop" /></a>
+									<div class="content">
+										<h2 class="major">Empresa Bakscoop</h2>
+										<p><strong>Bak, S.Coop</strong> es una empresa especializada en la <strong>fabricación y montaje de estructuras</strong>, cerramientos metálicos, policarbonatos, cubiertas tipo deck (Tela asfáltica, policloruro de vinilo, TPO), fachadas composite, reformas de cubiertas, mantenimientos... cumpliendo con los requisitos marcados en el <a href="https://www.codigotecnico.org/" target="_blank">Código Técnico de la Edificación</a>.</p>
+										<a href="#four" class="special">Ver trabajos realizados</a>
+									</div>
+								</div>
+							</section>
+
+						<!-- Two: Servicios -->
+							<section id="two" class="wrapper alt spotlight style2">
+								<div class="inner">
+									<a href="#" class="image"><img src="https://bakscoop.com/images/iniThumb2.jpg" alt="Cerramientos metálicos" /></a>
+									<div class="content">
+										<h2 class="major">Servicios que ofrecemos</h2>
+										<p>Formada por un grupo de profesionales con amplia experiencia en los diferentes sistemas de construcción, con departamentos de Ingeniería técnica, departamento comercial, taller de producción y equipos de montaje totalmente entrelazados.</p>
+										<a href="#four" class="special">Ver nuestros servicios</a>
+									</div>
+								</div>
+							</section>
+
+						<!-- Three: Experiencia -->
+							<section id="three" class="wrapper spotlight style3">
+								<div class="inner">
+									<a href="#" class="image"><img src="https://bakscoop.com/Images/eShop/thumbs/2247_195069892-1..jpg" alt="Reforma CAF Beasain" /></a>
+									<div class="content">
+										<h2 class="major">Experiencia y calidad</h2>
+										<p>Nuestro aval es la amplia destreza acumulada en los sucesivos años de presencia en el mercado. Si tuviésemos que destacar una virtud sería la del servicio al cliente. Una de nuestras mayores preocupaciones es la calidad final del trabajo y el estar abiertos a los nuevos materiales y tecnologías.</p>
+										<a href="#footer" class="special">Contactar</a>
+									</div>
+								</div>
+							</section>
+
+						<!-- Four: Servicios Grid + Trabajos -->
+							<section id="four" class="wrapper alt style1">
+								<div class="inner">
+									<h2 class="major">Nuestros servicios</h2>
+									<p>Todo ello cumpliendo con los requisitos marcados en el <strong>Código Técnico de la Edificación</strong>.</p>
+									<section class="features">
+										<article>
+											<a href="#" class="image"><img src="https://bakscoop.com/images/iniThumb1.jpg" alt="Fabricación de estructuras" /></a>
+											<h3 class="major">Fabricación y montaje de estructuras</h3>
+											<p>Diseño, fabricación y montaje de estructuras metálicas para naves industriales y edificaciones.</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="https://bakscoop.com/images/iniThumb2.jpg" alt="Cerramientos metálicos" /></a>
+											<h3 class="major">Cerramientos metálicos</h3>
+											<p>Instalación de cerramientos en acero, aluminio y hierro para naves industriales, comercios y viviendas.</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="https://bakscoop.com/images/iniThumb3.jpg" alt="Policarbonatos" /></a>
+											<h3 class="major">Policarbonatos</h3>
+											<p>Cubiertas y cerramientos de policarbonato celular para terrazas, porches, invernaderos y espacios industriales.</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="https://bakscoop.com/images/iniThumb4.jpg" alt="Cubiertas tipo deck" /></a>
+											<h3 class="major">Cubiertas tipo deck</h3>
+											<p>Tela asfáltica, policloruro de vinilo (PVC) y TPO. Soluciones de impermeabilización profesional.</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="https://bakscoop.com/Images/eShop/thumbs/2247_195073244-1..jpg" alt="Fachadas composite" /></a>
+											<h3 class="major">Fachadas composite</h3>
+											<p>Instalación de fachadas composite para edificios industriales y comerciales.</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="https://bakscoop.com/Images/eShop/thumbs/2247_195069892-1..jpg" alt="Reformas de cubiertas" /></a>
+											<h3 class="major">Reformas de cubiertas</h3>
+											<p>Renovación integral de cubiertas y tejados. Impermeabilización y mejora del aislamiento.</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="https://bakscoop.com/Images/eShop/thumbs/2247_195073368-1..jpg" alt="Mantenimientos" /></a>
+											<h3 class="major">Mantenimientos</h3>
+											<p>Servicio de mantenimiento preventivo y correctivo de cubiertas, canalones e instalaciones metálicas.</p>
+										</article>
+									</section>
+
+									<h2 class="major" style="margin-top:3em;">Trabajos realizados</h2>
+									<p>Algunos de nuestros proyectos más destacados en Guipúzcoa y alrededores.</p>
+									<section class="features">
+										<article>
+											<a href="#" class="image"><img src="https://bakscoop.com/Images/eShop/thumbs/2247_195073368-1..jpg" alt="Mantenimientos Diversos" /></a>
+											<h3 class="major">Mantenimientos Diversos</h3>
+											<p>Realización de diversos mantenimientos de canalones y de cubierta con inspecciones y documentación.</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="https://bakscoop.com/Images/eShop/thumbs/2247_195069892-1..jpg" alt="Reforma en CAF Beasain" /></a>
+											<h3 class="major">Reforma en CAF Beasain</h3>
+											<p>Sobrecubierta aislada, canalones nuevos galvanizados y fachadas en policarbonato celular.</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="https://bakscoop.com/Images/eShop/thumbs/2247_195069509-1..jpg" alt="Danobat Elgoibar" /></a>
+											<h3 class="major">Danobat (Elgoibar)</h3>
+											<p>Instalación de piezas inoxidables para el amarre de las luminarias en la cubierta de la nave nueva.</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="https://bakscoop.com/Images/eShop/thumbs/2247_118436135-1..jpg" alt="Ampo Idiazabal" /></a>
+											<h3 class="major">Ampo Idiazabal</h3>
+											<p>Renovación de los traslúcidos de los dientes sierra y limpieza y pintado de los canalones.</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="https://bakscoop.com/Images/eShop/thumbs/2247_192888931-1..jpg" alt="Fagor Aretxabaleta" /></a>
+											<h3 class="major">Fagor Aretxabaleta</h3>
+											<p>Cierre de cubierta de marquesina con lámina de Pvc y cierre en chapa simple de torre de ascensor.</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="https://bakscoop.com/Images/eShop/thumbs/2247_118438111-1..jpg" alt="GKN Zumaia" /></a>
+											<h3 class="major">GKN Zumaia</h3>
+											<p>Cambio de traslúcidos por cristales en dientes sierra. Reforma de cubierta posterior en tela asfáltica.</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="https://bakscoop.com/Images/eShop/thumbs/2247_118437846-1..jpg" alt="Padel Irún" /></a>
+											<h3 class="major">Padel Irún</h3>
+											<p>Transformación de claraboyas de fijas a móviles.</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="https://bakscoop.com/Images/eShop/thumbs/2247_195073244-1..jpg" alt="Irizar Ormaiztegi" /></a>
+											<h3 class="major">Irizar Ormaiztegi</h3>
+											<p>Sobrecubierta aislada y con lámina de Pvc. Rematado de chimeneas y conductos.</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="https://bakscoop.com/Images/eShop/thumbs/2247_195073562-1..jpg" alt="Copreci Aretxabaleta" /></a>
+											<h3 class="major">Copreci Aretxabaleta</h3>
+											<p>Renovación de cubierta con chapa grecada y canalones galvanizados. Bancada nueva.</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="https://bakscoop.com/Images/eShop/thumbs/2247_195074592-1..jpg" alt="Selak Hernani" /></a>
+											<h3 class="major">Selak Hernani</h3>
+											<p>Desmontaje del castillete en hormigón armado y colocación de estructura metálica nueva.</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="https://bakscoop.com/Images/eShop/thumbs/2247_118437989-1..jpg" alt="Rodisa Elgoibar" /></a>
+											<h3 class="major">Rodisa Elgoibar</h3>
+											<p>Colocación de falso techo.</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="https://bakscoop.com/Images/eShop/thumbs/2247_118438313-1..jpg" alt="Villa en Irún" /></a>
+											<h3 class="major">Villa en Irún</h3>
+											<p>Cierre en policarbonato celular de cubierta para piscina cubierta.</p>
+										</article>
+									</section>
+								</div>
+							</section>
+
+					</section>
+
+				<!-- Footer -->
+					<section id="footer">
+						<div class="inner">
+							<h2 class="major">Contacto</h2>
+							<p>Si tiene cualquier duda póngase en contacto con nosotros, estaremos encantados de atenderles.</p>
+							<ul class="contact">
+								<li class="icon solid fa-home">
+									Bak, S.Coop<br />
+									Calle Ibaieta Ibilbidea 9<br />
+									20304 Irún, Guipúzcoa
+								</li>
+								<li class="icon solid fa-phone"><a href="tel:843985620">843 985 620</a></li>
+								<li class="icon solid fa-envelope"><a href="mailto:bakscoop@gmail.com">bakscoop@gmail.com</a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; Bak, S.Coop 2026. Todos los derechos reservados.</li>
+								<li>Diseño: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- WhatsApp -->
+			<a href="https://wa.me/34843985620?text=Hola%2C%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20sobre%20vuestros%20servicios." target="_blank" rel="noopener" aria-label="WhatsApp" style="position:fixed;bottom:1.5rem;right:1.5rem;width:54px;height:54px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:999;box-shadow:0 3px 12px rgba(37,211,102,0.35);transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+				<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:28px;height:28px;fill:white;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+			</a>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
 </html>
