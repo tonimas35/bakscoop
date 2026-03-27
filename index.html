@@ -5,44 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bakscoop — Empresa Metalúrgica en Irún</title>
     <meta name="description" content="Bak S.Coop - Empresa metalúrgica en Irún, Guipúzcoa. Cerramientos metálicos, policarbonatos, reforma de cubiertas y mantenimientos.">
+    <meta property="og:title" content="Bakscoop — Empresa Metalúrgica en Irún">
+    <meta property="og:description" content="Bak S.Coop - Fabricación y montaje de estructuras, cerramientos metálicos, policarbonatos, cubiertas y mantenimientos en Guipúzcoa.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tonimas35.github.io/bakscoop/">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23cc0000'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='serif' font-weight='bold' font-size='20' fill='white'%3EB%3C/text%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --rojo: #cc0000;
-            --rojo-oscuro: #a30000;
-            --rojo-claro: #e60000;
-            --gris-900: #1a1a1a;
-            --gris-800: #333333;
-            --gris-700: #4a4a4a;
-            --gris-600: #666666;
-            --gris-500: #888888;
-            --gris-400: #999999;
-            --gris-300: #b3b3b3;
-            --gris-200: #d9d9d9;
-            --gris-100: #ececec;
-            --gris-50: #f5f5f5;
+            --rojo: #b91c1c;
+            --rojo-oscuro: #991b1b;
+            --rojo-claro: #dc2626;
+            --gris-900: #18181b;
+            --gris-800: #27272a;
+            --gris-700: #3f3f46;
+            --gris-600: #52525b;
+            --gris-500: #71717a;
+            --gris-400: #a1a1aa;
+            --gris-300: #d4d4d8;
+            --gris-200: #e4e4e7;
+            --gris-100: #f4f4f5;
+            --gris-50: #fafafa;
             --blanco: #ffffff;
-            --sombra-sm: 0 1px 3px rgba(0,0,0,0.1);
-            --sombra-md: 0 4px 12px rgba(0,0,0,0.1);
-            --sombra-lg: 0 8px 30px rgba(0,0,0,0.12);
-            --font: 'Libre Franklin', 'Segoe UI', sans-serif;
+            --crema: #faf9f7;
+            --sombra-sm: 0 1px 2px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.1);
+            --sombra-md: 0 4px 6px rgba(0,0,0,0.05), 0 10px 15px rgba(0,0,0,0.1);
+            --sombra-lg: 0 10px 25px rgba(0,0,0,0.08), 0 20px 48px rgba(0,0,0,0.12);
+            --font-heading: 'DM Serif Display', Georgia, 'Times New Roman', serif;
+            --font-body: 'Source Sans 3', 'Segoe UI', system-ui, sans-serif;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; scroll-padding-top: 110px; }
 
         body {
-            font-family: var(--font);
+            font-family: var(--font-body);
             background: var(--blanco);
-            color: var(--gris-800);
-            line-height: 1.6;
+            color: var(--gris-700);
+            line-height: 1.65;
             -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         img { max-width: 100%; height: auto; display: block; }
-        a { text-decoration: none; color: inherit; }
+        a { text-decoration: none; color: inherit; transition: color 0.2s; }
 
         /* =====================
            TOP BAR
@@ -120,18 +128,19 @@
         }
 
         .logo-text strong {
-            font-size: 1.3rem;
-            font-weight: 800;
-            color: var(--gris-900);
-            letter-spacing: -0.01em;
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: var(--rojo);
+            letter-spacing: 0.01em;
         }
 
         .logo-text span {
-            font-size: 0.75rem;
-            color: var(--rojo);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
+            font-size: 0.72rem;
+            color: var(--gris-500);
+            font-weight: 500;
+            font-style: italic;
+            letter-spacing: 0.04em;
         }
 
         .nav-links {
@@ -143,11 +152,14 @@
         .nav-links a {
             display: block;
             padding: 0.6rem 1.2rem;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             font-weight: 600;
-            color: var(--gris-700);
-            transition: all 0.2s;
+            color: var(--gris-600);
+            letter-spacing: 0.02em;
+            transition: all 0.25s ease;
             border-bottom: 2px solid transparent;
+            text-transform: uppercase;
+            font-size: 0.78rem;
         }
 
         .nav-links a:hover {
@@ -220,12 +232,13 @@
         }
 
         .hero-text h1 {
-            font-size: clamp(1.6rem, 4vw, 2.6rem);
-            font-weight: 800;
+            font-family: var(--font-heading);
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 400;
             color: var(--blanco);
-            line-height: 1.2;
-            margin-bottom: 0.5rem;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            line-height: 1.25;
+            margin-bottom: 0.75rem;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.4);
         }
 
         .hero-text p {
@@ -240,17 +253,20 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.75rem 1.8rem;
+            padding: 0.8rem 2rem;
             background: var(--rojo);
             color: var(--blanco);
-            font-size: 0.9rem;
-            font-weight: 700;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
             border: none;
             cursor: pointer;
-            transition: background 0.2s;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(185,28,28,0.3);
         }
 
-        .hero-btn:hover { background: var(--rojo-oscuro); }
+        .hero-btn:hover { background: var(--rojo-oscuro); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(185,28,28,0.4); }
 
         .hero-btn svg { width: 16px; height: 16px; }
 
@@ -316,28 +332,29 @@
            INTRO / ABOUT
            ===================== */
         .intro {
-            background: var(--blanco);
-            padding: 3.5rem 1.5rem;
+            background: var(--crema);
+            padding: 4.5rem 1.5rem;
         }
 
         .intro-inner {
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto;
             text-align: center;
         }
 
         .intro h2 {
-            font-size: 1.6rem;
-            font-weight: 800;
+            font-family: var(--font-heading);
+            font-size: 1.9rem;
+            font-weight: 400;
             color: var(--gris-900);
             margin-bottom: 0.75rem;
         }
 
         .intro-line {
-            width: 60px;
-            height: 3px;
+            width: 50px;
+            height: 2px;
             background: var(--rojo);
-            margin: 0 auto 1.5rem;
+            margin: 0 auto 2rem;
         }
 
         .intro p {
@@ -369,25 +386,26 @@
            SERVICES
            ===================== */
         .servicios {
-            background: var(--gris-50);
-            padding: 3.5rem 1.5rem;
+            background: var(--blanco);
+            padding: 4.5rem 1.5rem;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 2.5rem;
+            margin-bottom: 3rem;
         }
 
         .section-header h2 {
-            font-size: 1.6rem;
-            font-weight: 800;
+            font-family: var(--font-heading);
+            font-size: 1.9rem;
+            font-weight: 400;
             color: var(--gris-900);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.6rem;
         }
 
         .section-header .line {
-            width: 60px;
-            height: 3px;
+            width: 50px;
+            height: 2px;
             background: var(--rojo);
             margin: 0 auto;
         }
@@ -404,35 +422,58 @@
             background: var(--blanco);
             border: 1px solid var(--gris-200);
             overflow: hidden;
-            transition: box-shadow 0.2s, transform 0.2s;
+            transition: all 0.35s ease;
+            position: relative;
+        }
+
+        .servicio-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--rojo);
+            transform: scaleX(0);
+            transition: transform 0.35s ease;
         }
 
         .servicio-card:hover {
-            box-shadow: var(--sombra-md);
-            transform: translateY(-3px);
+            box-shadow: var(--sombra-lg);
+            transform: translateY(-4px);
+        }
+
+        .servicio-card:hover::after {
+            transform: scaleX(1);
         }
 
         .servicio-img {
             width: 100%;
             height: 200px;
             object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .servicio-card:hover .servicio-img {
+            transform: scale(1.05);
         }
 
         .servicio-body {
-            padding: 1.2rem;
+            padding: 1.25rem;
         }
 
         .servicio-body h3 {
-            font-size: 1rem;
-            font-weight: 700;
+            font-family: var(--font-heading);
+            font-size: 1.05rem;
+            font-weight: 400;
             color: var(--gris-900);
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.5rem;
         }
 
         .servicio-body p {
             font-size: 0.85rem;
-            color: var(--gris-600);
-            line-height: 1.6;
+            color: var(--gris-500);
+            line-height: 1.65;
         }
 
         .servicio-body .more {
@@ -450,25 +491,31 @@
         /* =====================
            TRABAJOS REALIZADOS
            ===================== */
-        .trabajos { background: var(--blanco); padding: 3.5rem 1.5rem; }
+        .trabajos { background: var(--crema); padding: 4.5rem 1.5rem; }
         .trabajos-grid {
             max-width: 1140px; margin: 0 auto;
             display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem;
         }
         .trabajo-card {
-            background: var(--gris-50); border: 1px solid var(--gris-200);
-            overflow: hidden; transition: box-shadow 0.2s, transform 0.2s;
+            background: var(--blanco); border: 1px solid var(--gris-200);
+            overflow: hidden; transition: all 0.35s ease; position: relative;
         }
-        .trabajo-card:hover { box-shadow: var(--sombra-md); transform: translateY(-2px); }
-        .trabajo-img { width: 100%; height: 180px; object-fit: cover; }
-        .trabajo-body { padding: 1rem; }
-        .trabajo-body h3 { font-size: 0.9rem; font-weight: 700; color: var(--gris-900); margin-bottom: 0.3rem; }
-        .trabajo-body p { font-size: 0.8rem; color: var(--gris-600); line-height: 1.5; }
+        .trabajo-card::after {
+            content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+            height: 3px; background: var(--rojo); transform: scaleX(0); transition: transform 0.35s ease;
+        }
+        .trabajo-card:hover { box-shadow: var(--sombra-lg); transform: translateY(-4px); }
+        .trabajo-card:hover::after { transform: scaleX(1); }
+        .trabajo-img { width: 100%; height: 180px; object-fit: cover; transition: transform 0.5s ease; }
+        .trabajo-card:hover .trabajo-img { transform: scale(1.05); }
+        .trabajo-body { padding: 1rem 1.1rem; }
+        .trabajo-body h3 { font-family: var(--font-heading); font-size: 0.95rem; font-weight: 400; color: var(--gris-900); margin-bottom: 0.35rem; }
+        .trabajo-body p { font-size: 0.82rem; color: var(--gris-500); line-height: 1.55; }
 
         /* =====================
            NOTICIAS
            ===================== */
-        .noticias { background: var(--gris-50); padding: 3.5rem 1.5rem; }
+        .noticias { background: var(--blanco); padding: 4.5rem 1.5rem; }
         .noticias-grid {
             max-width: 1140px; margin: 0 auto;
             display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;
@@ -481,21 +528,27 @@
         .noticia-card:hover { box-shadow: var(--sombra-md); }
         .noticia-img { width: 100%; height: 200px; object-fit: cover; }
         .noticia-body { padding: 1.2rem; }
-        .noticia-body h3 { font-size: 0.95rem; font-weight: 700; color: var(--gris-900); margin-bottom: 0.4rem; line-height: 1.4; }
+        .noticia-card { transition: all 0.35s ease; }
+        .noticia-card:hover { box-shadow: var(--sombra-lg); transform: translateY(-3px); }
+        .noticia-body h3 { font-family: var(--font-heading); font-size: 1rem; font-weight: 400; color: var(--gris-900); margin-bottom: 0.4rem; line-height: 1.4; }
         .noticia-body .fecha { font-size: 0.78rem; color: var(--gris-500); font-weight: 500; }
 
         /* =====================
            MODAL
            ===================== */
         .modal-overlay {
-            display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7);
+            display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.75);
+            backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
             z-index: 200; justify-content: center; align-items: center; padding: 2rem;
         }
-        .modal-overlay.active { display: flex; }
+        .modal-overlay.active { display: flex; animation: fadeIn 0.25s ease; }
         .modal-box {
             background: var(--blanco); max-width: 720px; width: 100%; max-height: 85vh;
-            overflow-y: auto; position: relative; box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow-y: auto; position: relative; box-shadow: 0 25px 80px rgba(0,0,0,0.4);
+            animation: slideUp 0.3s ease;
         }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         .modal-close {
             position: absolute; top: 0.75rem; right: 0.75rem; background: var(--gris-900);
             color: white; border: none; width: 32px; height: 32px; font-size: 1.2rem;
@@ -518,7 +571,7 @@
         }
         .modal-gallery-dots span.active { background: var(--rojo); }
         .modal-content { padding: 1.5rem; }
-        .modal-content h2 { font-size: 1.1rem; font-weight: 700; color: var(--gris-900); margin-bottom: 0.75rem; }
+        .modal-content h2 { font-family: var(--font-heading); font-size: 1.2rem; font-weight: 400; color: var(--gris-900); margin-bottom: 0.75rem; }
         .modal-content p { font-size: 0.88rem; color: var(--gris-600); line-height: 1.7; }
         .modal-content .fecha { font-size: 0.8rem; color: var(--gris-500); margin-bottom: 0.5rem; display: block; }
         .trabajo-card, .noticia-card { cursor: pointer; }
@@ -532,8 +585,8 @@
            CONTACT
            ===================== */
         .contacto {
-            background: var(--blanco);
-            padding: 3.5rem 1.5rem;
+            background: var(--crema);
+            padding: 4.5rem 1.5rem;
         }
 
         .contacto-grid {
@@ -546,8 +599,9 @@
         }
 
         .contacto-info h2 {
-            font-size: 1.6rem;
-            font-weight: 800;
+            font-family: var(--font-heading);
+            font-size: 1.9rem;
+            font-weight: 400;
             color: var(--gris-900);
             margin-bottom: 0.5rem;
         }
@@ -628,9 +682,9 @@
            FOOTER
            ===================== */
         .footer {
-            background: var(--gris-800);
-            color: var(--gris-300);
-            padding: 2.5rem 1.5rem 1.5rem;
+            background: var(--gris-900);
+            color: var(--gris-400);
+            padding: 3rem 1.5rem 1.5rem;
         }
 
         .footer-inner {
@@ -646,12 +700,11 @@
         }
 
         .footer h4 {
-            font-size: 0.9rem;
-            font-weight: 700;
+            font-family: var(--font-heading);
+            font-size: 1.05rem;
+            font-weight: 400;
             color: var(--blanco);
             margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
         }
 
         .footer p,
@@ -719,22 +772,47 @@
             transition: transform 0.2s;
         }
 
-        .whatsapp:hover { transform: scale(1.08); }
+        .whatsapp:hover { transform: scale(1.1); }
         .whatsapp svg { width: 28px; height: 28px; fill: white; }
+        .whatsapp::before {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            border: 2px solid #25D366;
+            animation: whatsappPulse 2s ease-in-out infinite;
+        }
+        @keyframes whatsappPulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.15); opacity: 0; }
+        }
 
         /* =====================
            SCROLL REVEAL (subtle)
            ===================== */
         .fade-up {
             opacity: 0;
-            transform: translateY(18px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
+            transform: translateY(24px);
+            transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
         }
 
         .fade-up.show {
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Staggered delays for grid items */
+        .servicios-grid .fade-up:nth-child(2) { transition-delay: 0.08s; }
+        .servicios-grid .fade-up:nth-child(3) { transition-delay: 0.16s; }
+        .servicios-grid .fade-up:nth-child(4) { transition-delay: 0.24s; }
+        .servicios-grid .fade-up:nth-child(5) { transition-delay: 0.32s; }
+        .servicios-grid .fade-up:nth-child(6) { transition-delay: 0.40s; }
+        .servicios-grid .fade-up:nth-child(7) { transition-delay: 0.48s; }
+        .trabajos-grid .fade-up:nth-child(2) { transition-delay: 0.06s; }
+        .trabajos-grid .fade-up:nth-child(3) { transition-delay: 0.12s; }
+        .trabajos-grid .fade-up:nth-child(4) { transition-delay: 0.18s; }
+        .trabajos-grid .fade-up:nth-child(5) { transition-delay: 0.24s; }
+        .trabajos-grid .fade-up:nth-child(6) { transition-delay: 0.30s; }
 
         /* =====================
            RESPONSIVE
@@ -885,7 +963,7 @@
             <div class="intro-line"></div>
             <div class="empresa-content">
                 <div class="empresa-img">
-                    <img src="https://bakscoop.com/Images/eShop/thumbs/2247_195073368-1..jpg" alt="Trabajo de cubiertas Bakscoop">
+                    <img loading="lazy" src="https://bakscoop.com/Images/eShop/thumbs/2247_195073368-1..jpg" alt="Trabajo de cubiertas Bakscoop">
                 </div>
                 <div class="empresa-text">
                     <p><strong>Bak, S.Coop</strong> es una empresa especializada en la <strong>fabricación y montaje de estructuras</strong>, cerramientos metálicos, policarbonatos, cubiertas tipo deck (Tela asfáltica, policloruro de vinilo, TPO), fachadas composite, reformas de cubiertas, mantenimientos... cumpliendo con los requisitos marcados en el <a href="https://www.codigotecnico.org/" target="_blank" rel="noopener">Código Técnico de la Edificación</a>.</p>
@@ -905,49 +983,49 @@
         </div>
         <div class="servicios-grid">
             <div class="servicio-card fade-up">
-                <img class="servicio-img" src="https://bakscoop.com/images/iniThumb1.jpg" alt="Fabricación y montaje de estructuras">
+                <img class="servicio-img" loading="lazy" src="https://bakscoop.com/images/iniThumb1.jpg" alt="Fabricación y montaje de estructuras">
                 <div class="servicio-body">
                     <h3>Fabricación y montaje de estructuras</h3>
                     <p>Diseño, fabricación y montaje de estructuras metálicas para naves industriales y edificaciones.</p>
                 </div>
             </div>
             <div class="servicio-card fade-up">
-                <img class="servicio-img" src="https://bakscoop.com/images/iniThumb2.jpg" alt="Cerramientos metálicos">
+                <img class="servicio-img" loading="lazy" src="https://bakscoop.com/images/iniThumb2.jpg" alt="Cerramientos metálicos">
                 <div class="servicio-body">
                     <h3>Cerramientos metálicos</h3>
                     <p>Instalación de cerramientos en acero, aluminio y hierro para naves industriales, comercios y viviendas.</p>
                 </div>
             </div>
             <div class="servicio-card fade-up">
-                <img class="servicio-img" src="https://bakscoop.com/images/iniThumb3.jpg" alt="Policarbonatos">
+                <img class="servicio-img" loading="lazy" src="https://bakscoop.com/images/iniThumb3.jpg" alt="Policarbonatos">
                 <div class="servicio-body">
                     <h3>Policarbonatos</h3>
                     <p>Cubiertas y cerramientos de policarbonato celular para terrazas, porches, invernaderos y espacios industriales.</p>
                 </div>
             </div>
             <div class="servicio-card fade-up">
-                <img class="servicio-img" src="https://bakscoop.com/images/iniThumb4.jpg" alt="Cubiertas tipo deck">
+                <img class="servicio-img" loading="lazy" src="https://bakscoop.com/images/iniThumb4.jpg" alt="Cubiertas tipo deck">
                 <div class="servicio-body">
                     <h3>Cubiertas tipo deck</h3>
                     <p>Tela asfáltica, policloruro de vinilo (PVC) y TPO. Soluciones de impermeabilización profesional.</p>
                 </div>
             </div>
             <div class="servicio-card fade-up">
-                <img class="servicio-img" src="https://bakscoop.com/Images/eShop/thumbs/2247_195073244-1..jpg" alt="Fachadas composite">
+                <img class="servicio-img" loading="lazy" src="https://bakscoop.com/Images/eShop/thumbs/2247_195073244-1..jpg" alt="Fachadas composite">
                 <div class="servicio-body">
                     <h3>Fachadas composite</h3>
                     <p>Instalación de fachadas composite para edificios industriales y comerciales.</p>
                 </div>
             </div>
             <div class="servicio-card fade-up">
-                <img class="servicio-img" src="https://bakscoop.com/Images/eShop/thumbs/2247_195069892-1..jpg" alt="Reformas de cubiertas">
+                <img class="servicio-img" loading="lazy" src="https://bakscoop.com/Images/eShop/thumbs/2247_195069892-1..jpg" alt="Reformas de cubiertas">
                 <div class="servicio-body">
                     <h3>Reformas de cubiertas</h3>
                     <p>Renovación integral de cubiertas y tejados. Impermeabilización y mejora del aislamiento.</p>
                 </div>
             </div>
             <div class="servicio-card fade-up">
-                <img class="servicio-img" src="https://bakscoop.com/Images/eShop/thumbs/2247_195073368-1..jpg" alt="Mantenimientos">
+                <img class="servicio-img" loading="lazy" src="https://bakscoop.com/Images/eShop/thumbs/2247_195073368-1..jpg" alt="Mantenimientos">
                 <div class="servicio-body">
                     <h3>Mantenimientos</h3>
                     <p>Servicio de mantenimiento preventivo y correctivo de cubiertas, canalones e instalaciones metálicas.</p>
@@ -965,105 +1043,105 @@
         </div>
         <div class="trabajos-grid">
             <div class="trabajo-card fade-up" data-modal="mantenimientos">
-                <img class="trabajo-img" src="https://bakscoop.com/Images/eShop/thumbs/2247_195073368-1..jpg" alt="Mantenimientos diversos">
+                <img class="trabajo-img" loading="lazy" src="https://bakscoop.com/Images/eShop/thumbs/2247_195073368-1..jpg" alt="Mantenimientos diversos">
                 <div class="trabajo-body">
                     <h3>Mantenimientos Diversos</h3>
                     <p>Realización de diversos mantenimientos de canalones y de cubierta.</p>
                 </div>
             </div>
             <div class="trabajo-card fade-up" data-modal="caf">
-                <img class="trabajo-img" src="https://bakscoop.com/Images/eShop/thumbs/2247_195069892-1..jpg" alt="Reforma en CAF Beasain">
+                <img class="trabajo-img" loading="lazy" src="https://bakscoop.com/Images/eShop/thumbs/2247_195069892-1..jpg" alt="Reforma en CAF Beasain">
                 <div class="trabajo-body">
                     <h3>Reforma en CAF Beasain</h3>
                     <p>Reforma de cubiertas y fachadas del edificio de comedor.</p>
                 </div>
             </div>
             <div class="trabajo-card fade-up" data-modal="danobat">
-                <img class="trabajo-img" src="https://bakscoop.com/Images/eShop/thumbs/2247_195069509-1..jpg" alt="Danobat Elgoibar">
+                <img class="trabajo-img" loading="lazy" src="https://bakscoop.com/Images/eShop/thumbs/2247_195069509-1..jpg" alt="Danobat Elgoibar">
                 <div class="trabajo-body">
                     <h3>Danobat (Elgoibar)</h3>
                     <p>Colocación de luminarias en la cubierta de Danobat en Elgoibar.</p>
                 </div>
             </div>
             <div class="trabajo-card fade-up" data-modal="ampo">
-                <img class="trabajo-img" src="https://bakscoop.com/Images/eShop/thumbs/2247_118436135-1..jpg" alt="Ampo Idiazabal">
+                <img class="trabajo-img" loading="lazy" src="https://bakscoop.com/Images/eShop/thumbs/2247_118436135-1..jpg" alt="Ampo Idiazabal">
                 <div class="trabajo-body">
                     <h3>Ampo Idiazabal</h3>
                     <p>Renovación de los traslúcidos de los dientes sierra y limpieza y pintado de los canalones.</p>
                 </div>
             </div>
             <div class="trabajo-card fade-up" data-modal="fagor">
-                <img class="trabajo-img" src="https://bakscoop.com/Images/eShop/thumbs/2247_192888931-1..jpg" alt="Fagor Aretxabaleta">
+                <img class="trabajo-img" loading="lazy" src="https://bakscoop.com/Images/eShop/thumbs/2247_192888931-1..jpg" alt="Fagor Aretxabaleta">
                 <div class="trabajo-body">
                     <h3>Fagor Aretxabaleta</h3>
                     <p>Cierre de cubierta de marquesina con lámina de Pvc y cierre en chapa simple de torre de ascensor.</p>
                 </div>
             </div>
             <div class="trabajo-card fade-up" data-modal="gkn">
-                <img class="trabajo-img" src="https://bakscoop.com/Images/eShop/thumbs/2247_118438111-1..jpg" alt="GKN Zumaia">
+                <img class="trabajo-img" loading="lazy" src="https://bakscoop.com/Images/eShop/thumbs/2247_118438111-1..jpg" alt="GKN Zumaia">
                 <div class="trabajo-body">
                     <h3>GKN Zumaia</h3>
                     <p>Cambio de plásticos por cristales en dientes sierra. Reforma de cubierta posterior.</p>
                 </div>
             </div>
             <div class="trabajo-card fade-up" data-modal="padel">
-                <img class="trabajo-img" src="https://bakscoop.com/Images/eShop/thumbs/2247_118437846-1..jpg" alt="Padel Irún">
+                <img class="trabajo-img" loading="lazy" src="https://bakscoop.com/Images/eShop/thumbs/2247_118437846-1..jpg" alt="Padel Irún">
                 <div class="trabajo-body">
                     <h3>Padel Irún</h3>
                     <p>Transformación de claraboyas de fijas a móviles.</p>
                 </div>
             </div>
             <div class="trabajo-card fade-up" data-modal="irizar">
-                <img class="trabajo-img" src="https://bakscoop.com/Images/eShop/thumbs/2247_195073244-1..jpg" alt="Irizar Ormaiztegi">
+                <img class="trabajo-img" loading="lazy" src="https://bakscoop.com/Images/eShop/thumbs/2247_195073244-1..jpg" alt="Irizar Ormaiztegi">
                 <div class="trabajo-body">
                     <h3>Irizar Ormaiztegi</h3>
                     <p>Sobrecubierta aislada y con lámina de Pvc en cubierta de chimeneas.</p>
                 </div>
             </div>
             <div class="trabajo-card fade-up" data-modal="copreci">
-                <img class="trabajo-img" src="https://bakscoop.com/Images/eShop/thumbs/2247_195073562-1..jpg" alt="Copreci Aretxabaleta">
+                <img class="trabajo-img" loading="lazy" src="https://bakscoop.com/Images/eShop/thumbs/2247_195073562-1..jpg" alt="Copreci Aretxabaleta">
                 <div class="trabajo-body">
                     <h3>Copreci Aretxabaleta</h3>
                     <p>Renovación de diferentes zonas.</p>
                 </div>
             </div>
             <div class="trabajo-card fade-up" data-modal="selak">
-                <img class="trabajo-img" src="https://bakscoop.com/Images/eShop/thumbs/2247_195074592-1..jpg" alt="Selak Hernani">
+                <img class="trabajo-img" loading="lazy" src="https://bakscoop.com/Images/eShop/thumbs/2247_195074592-1..jpg" alt="Selak Hernani">
                 <div class="trabajo-body">
                     <h3>Selak Hernani</h3>
                     <p>Cambio del castillete de cubierta en hormigón armado por otro en estructura metálica.</p>
                 </div>
             </div>
             <div class="trabajo-card fade-up" data-modal="rodisa">
-                <img class="trabajo-img" src="https://bakscoop.com/Images/eShop/thumbs/2247_118437989-1..jpg" alt="Rodisa Elgoibar">
+                <img class="trabajo-img" loading="lazy" src="https://bakscoop.com/Images/eShop/thumbs/2247_118437989-1..jpg" alt="Rodisa Elgoibar">
                 <div class="trabajo-body">
                     <h3>Rodisa Elgoibar</h3>
                     <p>Colocación de falso techo.</p>
                 </div>
             </div>
             <div class="trabajo-card fade-up" data-modal="villa">
-                <img class="trabajo-img" src="https://bakscoop.com/Images/eShop/thumbs/2247_118438313-1..jpg" alt="Villa en Irun">
+                <img class="trabajo-img" loading="lazy" src="https://bakscoop.com/Images/eShop/thumbs/2247_118438313-1..jpg" alt="Villa en Irun">
                 <div class="trabajo-body">
                     <h3>Villa en Irún</h3>
                     <p>Cierre en policarbonato celular de cubierta para piscina cubierta.</p>
                 </div>
             </div>
             <div class="trabajo-card fade-up" data-modal="okin">
-                <img class="trabajo-img" src="https://bakscoop.com/Images/eShop/thumbs/2247_118438558-1..jpg" alt="Okin">
+                <img class="trabajo-img" loading="lazy" src="https://bakscoop.com/Images/eShop/thumbs/2247_118438558-1..jpg" alt="Okin">
                 <div class="trabajo-body">
                     <h3>Okin</h3>
                     <p>Realización de chimeneas de cubierta.</p>
                 </div>
             </div>
             <div class="trabajo-card fade-up" data-modal="bieraikin">
-                <img class="trabajo-img" src="https://bakscoop.com/Images/eShop/thumbs/2247_118437622-1..jpg" alt="Bi Eraikin">
+                <img class="trabajo-img" loading="lazy" src="https://bakscoop.com/Images/eShop/thumbs/2247_118437622-1..jpg" alt="Bi Eraikin">
                 <div class="trabajo-body">
                     <h3>Bi Eraikin</h3>
                     <p>Trabajos de cubierta en villa.</p>
                 </div>
             </div>
             <div class="trabajo-card fade-up" data-modal="artzamendi">
-                <img class="trabajo-img" src="https://bakscoop.com/Images/eShop/thumbs/2247_118437431-1..jpg" alt="Artzamendi Izaspi">
+                <img class="trabajo-img" loading="lazy" src="https://bakscoop.com/Images/eShop/thumbs/2247_118437431-1..jpg" alt="Artzamendi Izaspi">
                 <div class="trabajo-body">
                     <h3>Artzamendi Izaspi</h3>
                     <p>Trabajos de cubierta.</p>
@@ -1080,14 +1158,14 @@
         </div>
         <div class="noticias-grid">
             <div class="noticia-card fade-up" data-modal="noticia-cubiertas">
-                <img class="noticia-img" src="https://bakscoop.com/Images/news/photos/2247_338992573-1.jpeg" alt="Campaña Trabajos en cubiertas">
+                <img class="noticia-img" loading="lazy" src="https://bakscoop.com/Images/news/photos/2247_338992573-1.jpeg" alt="Campaña Trabajos en cubiertas">
                 <div class="noticia-body">
                     <h3>Bak, S.Coop colaborando en la difusión de la campaña: "Trabajos en cubiertas"</h3>
                     <span class="fecha">28 de septiembre de 2021</span>
                 </div>
             </div>
             <div class="noticia-card fade-up" data-modal="noticia-web">
-                <img class="noticia-img" src="https://bakscoop.com/Images/news/photos/2247_118436059-1..jpg" alt="Nueva página web">
+                <img class="noticia-img" loading="lazy" src="https://bakscoop.com/Images/news/photos/2247_118436059-1..jpg" alt="Nueva página web">
                 <div class="noticia-body">
                     <h3>Nueva página web</h3>
                     <span class="fecha">2 de junio de 2014</span>
