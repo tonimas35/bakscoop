@@ -556,7 +556,7 @@
         }
         .modal-close:hover { background: var(--rojo); }
         .modal-gallery { position: relative; }
-        .modal-gallery img { width: 100%; height: 350px; object-fit: cover; display: block; }
+        .modal-gallery img { width: 100%; max-height: 420px; object-fit: contain; display: block; background: var(--gris-100); }
         .modal-gallery-nav {
             position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5);
             color: white; border: none; padding: 0.5rem 0.8rem; font-size: 1.2rem; cursor: pointer;
@@ -574,7 +574,7 @@
         .modal-content h2 { font-family: var(--font-heading); font-size: 1.2rem; font-weight: 400; color: var(--gris-900); margin-bottom: 0.75rem; }
         .modal-content p { font-size: 0.88rem; color: var(--gris-600); line-height: 1.7; }
         .modal-content .fecha { font-size: 0.8rem; color: var(--gris-500); margin-bottom: 0.5rem; display: block; }
-        .trabajo-card, .noticia-card { cursor: pointer; }
+        .servicio-card, .trabajo-card, .noticia-card { cursor: pointer; }
 
         @media (max-width: 580px) {
             .modal-overlay { padding: 0.5rem; }
@@ -982,49 +982,49 @@
             <div class="line"></div>
         </div>
         <div class="servicios-grid">
-            <div class="servicio-card fade-up">
+            <div class="servicio-card fade-up" data-modal="serv-estructuras">
                 <img class="servicio-img" loading="lazy" src="https://bakscoop.com/images/iniThumb1.jpg" alt="Fabricación y montaje de estructuras">
                 <div class="servicio-body">
                     <h3>Fabricación y montaje de estructuras</h3>
                     <p>Diseño, fabricación y montaje de estructuras metálicas para naves industriales y edificaciones.</p>
                 </div>
             </div>
-            <div class="servicio-card fade-up">
+            <div class="servicio-card fade-up" data-modal="serv-cerramientos">
                 <img class="servicio-img" loading="lazy" src="https://bakscoop.com/images/iniThumb2.jpg" alt="Cerramientos metálicos">
                 <div class="servicio-body">
                     <h3>Cerramientos metálicos</h3>
                     <p>Instalación de cerramientos en acero, aluminio y hierro para naves industriales, comercios y viviendas.</p>
                 </div>
             </div>
-            <div class="servicio-card fade-up">
+            <div class="servicio-card fade-up" data-modal="serv-policarbonatos">
                 <img class="servicio-img" loading="lazy" src="https://bakscoop.com/images/iniThumb3.jpg" alt="Policarbonatos">
                 <div class="servicio-body">
                     <h3>Policarbonatos</h3>
                     <p>Cubiertas y cerramientos de policarbonato celular para terrazas, porches, invernaderos y espacios industriales.</p>
                 </div>
             </div>
-            <div class="servicio-card fade-up">
+            <div class="servicio-card fade-up" data-modal="serv-deck">
                 <img class="servicio-img" loading="lazy" src="https://bakscoop.com/images/iniThumb4.jpg" alt="Cubiertas tipo deck">
                 <div class="servicio-body">
                     <h3>Cubiertas tipo deck</h3>
                     <p>Tela asfáltica, policloruro de vinilo (PVC) y TPO. Soluciones de impermeabilización profesional.</p>
                 </div>
             </div>
-            <div class="servicio-card fade-up">
+            <div class="servicio-card fade-up" data-modal="serv-fachadas">
                 <img class="servicio-img" loading="lazy" src="https://bakscoop.com/Images/eShop/thumbs/2247_195073244-1..jpg" alt="Fachadas composite">
                 <div class="servicio-body">
                     <h3>Fachadas composite</h3>
                     <p>Instalación de fachadas composite para edificios industriales y comerciales.</p>
                 </div>
             </div>
-            <div class="servicio-card fade-up">
+            <div class="servicio-card fade-up" data-modal="serv-reformas">
                 <img class="servicio-img" loading="lazy" src="https://bakscoop.com/Images/eShop/thumbs/2247_195069892-1..jpg" alt="Reformas de cubiertas">
                 <div class="servicio-body">
                     <h3>Reformas de cubiertas</h3>
                     <p>Renovación integral de cubiertas y tejados. Impermeabilización y mejora del aislamiento.</p>
                 </div>
             </div>
-            <div class="servicio-card fade-up">
+            <div class="servicio-card fade-up" data-modal="serv-mantenimientos">
                 <img class="servicio-img" loading="lazy" src="https://bakscoop.com/Images/eShop/thumbs/2247_195073368-1..jpg" alt="Mantenimientos">
                 <div class="servicio-body">
                     <h3>Mantenimientos</h3>
@@ -1375,7 +1375,7 @@
             ampo: {
                 title: 'Ampo Idiazabal',
                 desc: 'Renovación de los traslúcidos de los dientes sierra y limpieza y pintado de los canalones.',
-                imgs: [B+'2247_118436135-1..jpg']
+                imgs: [B+'2247_118436135-1..jpg', B+'2247_118436135-2..jpg', B+'2247_118436136-3..jpg']
             },
             fagor: {
                 title: 'Fagor Aretxabaleta',
@@ -1384,53 +1384,53 @@
             },
             gkn: {
                 title: 'GKN Zumaia',
-                desc: 'Cambio de plásticos por cristales en dientes sierra. Reforma de cubierta posterior.',
-                imgs: [B+'2247_118438111-1..jpg']
+                desc: 'Cambio de traslúcidos de dientes sierra por cristales. Colocación de ventanales con lamas de apertura automática. Reforma de cubierta posterior en tela asfáltica, colocación de grava nueva y cambio de cúpulas de claraboyas.',
+                imgs: [B+'2247_118438111-1..jpg', B+'2247_118438111-2..jpg', B+'2247_195073927-3..jpg', B+'2247_195073930-4..jpg']
             },
             padel: {
                 title: 'Padel Irún',
                 desc: 'Transformación de claraboyas de fijas a móviles.',
-                imgs: [B+'2247_118437846-1..jpg']
+                imgs: [B+'2247_118437846-1..jpg', B+'2247_118437846-2..jpg', B+'2247_118437846-3..jpg']
             },
             irizar: {
                 title: 'Irizar Ormaiztegi',
-                desc: 'Sobrecubierta aislada y con lámina de Pvc en cubierta de chimeneas.',
-                imgs: [B+'2247_195073244-1..jpg']
+                desc: 'Realización de una sobrecubierta aislada y con finalización en lámina de Pvc en zona de cabinas de pintura. Rematado de todas las chimeneas y conductos de la cubierta con remates colaminados y lámina de Pvc.',
+                imgs: [B+'2247_195073244-1..jpg', B+'2247_195073245-2..jpg']
             },
             copreci: {
                 title: 'Copreci Aretxabaleta',
-                desc: 'Renovación de diferentes zonas.',
-                imgs: [B+'2247_195073562-1..jpg']
+                desc: 'Renovación de cubierta con chapa grecada y canalones galvanizados salvando los pilares y chimeneas existentes. Realización de bancada nueva.',
+                imgs: [B+'2247_195073562-1..jpg', B+'2247_195073563-2..jpg']
             },
             selak: {
                 title: 'Selak Hernani',
-                desc: 'Cambio del castillete de cubierta en hormigón armado por otro en estructura metálica.',
-                imgs: [B+'2247_195074592-1..jpg']
+                desc: 'Desmontaje del castillete en hormigón armado y colocación de uno nuevo en estructura metálica pintada con cierre de la cubierta con chapas grecadas y traslúcidos en poliéster. Posteriormente se cambian los traslúcidos curvos de la cubierta por unos nuevos.',
+                imgs: [B+'2247_195074592-1..jpg', B+'2247_195074593-2..jpg', B+'2247_195074593-3..jpg', B+'2247_195074594-4..jpg']
             },
             rodisa: {
                 title: 'Rodisa Elgoibar',
                 desc: 'Colocación de falso techo.',
-                imgs: [B+'2247_118437989-1..jpg']
+                imgs: [B+'2247_118437989-1..jpg', B+'2247_118437989-2..jpg', B+'2247_118437989-3..jpg']
             },
             villa: {
                 title: 'Villa en Irún',
                 desc: 'Cierre en policarbonato celular de cubierta para piscina cubierta.',
-                imgs: [B+'2247_118438313-1..jpg']
+                imgs: [B+'2247_118438313-1..jpg', B+'2247_118438313-2..jpg', B+'2247_118438313-3..jpg', B+'2247_118438314-4..jpg']
             },
             okin: {
                 title: 'Okin',
                 desc: 'Realización de chimeneas de cubierta.',
-                imgs: [B+'2247_118438558-1..jpg']
+                imgs: [B+'2247_118438558-1..jpg', B+'2247_118438558-3..jpg', B+'2247_118438559-4..jpg']
             },
             bieraikin: {
                 title: 'Bi Eraikin',
                 desc: 'Trabajos de cubierta en villa.',
-                imgs: [B+'2247_118437622-1..jpg']
+                imgs: [B+'2247_118437622-1..jpg', B+'2247_118437622-2..jpg', B+'2247_118437622-3..jpg']
             },
             artzamendi: {
                 title: 'Artzamendi Izaspi',
                 desc: 'Trabajos de cubierta.',
-                imgs: [B+'2247_118437431-1..jpg']
+                imgs: [B+'2247_118437431-1..jpg', B+'2247_118437431-2..jpg', B+'2247_118437431-3..jpg']
             },
             'noticia-cubiertas': {
                 title: 'Bak, S.Coop colaborando en la difusión de la campaña: "Trabajos en cubiertas"',
@@ -1443,6 +1443,42 @@
                 desc: 'Cualquier duda que tenga puede ponerse en contacto con nosotros, estaremos encantados de atenderles.',
                 fecha: '2 de junio de 2014',
                 imgs: [N+'2247_118436059-1..jpg']
+            },
+            // SERVICIOS
+            'serv-estructuras': {
+                title: 'Fabricación y montaje de estructuras',
+                desc: 'Diseño, fabricación y montaje de estructuras metálicas para naves industriales y edificaciones. Trabajamos con acero, hierro y aluminio, adaptándonos a las necesidades de cada proyecto.',
+                imgs: ['https://bakscoop.com/images/iniThumb1.jpg']
+            },
+            'serv-cerramientos': {
+                title: 'Cerramientos metálicos',
+                desc: 'Instalación de cerramientos en acero, aluminio y hierro para naves industriales, comercios y viviendas. Soluciones a medida para cada tipo de edificación.',
+                imgs: ['https://bakscoop.com/images/iniThumb2.jpg']
+            },
+            'serv-policarbonatos': {
+                title: 'Policarbonatos',
+                desc: 'Cubiertas y cerramientos de policarbonato celular para terrazas, porches, invernaderos y espacios industriales. Permite la entrada de luz natural manteniendo la protección.',
+                imgs: ['https://bakscoop.com/images/iniThumb3.jpg']
+            },
+            'serv-deck': {
+                title: 'Cubiertas tipo deck',
+                desc: 'Tela asfáltica, policloruro de vinilo (PVC) y TPO. Soluciones profesionales de impermeabilización para cubiertas industriales y comerciales.',
+                imgs: ['https://bakscoop.com/images/iniThumb4.jpg']
+            },
+            'serv-fachadas': {
+                title: 'Fachadas composite',
+                desc: 'Instalación de fachadas composite para edificios industriales y comerciales. Material ligero, resistente y de gran acabado estético.',
+                imgs: [B+'2247_195073244-1..jpg']
+            },
+            'serv-reformas': {
+                title: 'Reformas de cubiertas',
+                desc: 'Renovación integral de cubiertas y tejados. Impermeabilización, sustitución de materiales y mejora del aislamiento térmico y acústico.',
+                imgs: [B+'2247_195069892-1..jpg']
+            },
+            'serv-mantenimientos': {
+                title: 'Mantenimientos',
+                desc: 'Servicio de mantenimiento preventivo y correctivo de cubiertas, canalones e instalaciones metálicas. Inspecciones periódicas, limpieza, pintado y reparaciones.',
+                imgs: [B+'2247_195073368-1..jpg']
             }
         };
 
